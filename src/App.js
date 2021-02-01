@@ -14,6 +14,10 @@ import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import Signup from "./Auth/Signup";
 import Login from "./Auth/Login";
 
+// Components
+import Navbar from "./components/Layout/Navbar";
+import Footer from "./components/Layout/Footer";
+
 // Pages
 import home from "./pages/landingPage";
 
@@ -35,7 +39,7 @@ const App = () => {
     <MuiThemeProvider theme={theme}>
       <div>
         <Router>
-          {/* <Navbar /> */}
+          <Navbar />
           <div className="container">
             <Switch>
               <Route exact path="/" component={home} />
@@ -50,6 +54,7 @@ const App = () => {
               <Route exact path="/privacypolicy" component={privacyPolicy} />
               <Route component={PageNotFound} />
             </Switch>
+            <Footer />
           </div>
         </Router>
       </div>
