@@ -15,14 +15,17 @@ export default {
       black: "#000000",
       sucess: "#32A745",
       red: "#AB0B22",
+      yellow: "#fdb51d",
+      darkWhite: "#E4E5D1",
     },
 
     font: {
-      fontFamily: "HelveticaNeue",
+      HelveticaNeue: "HelveticaNeue",
       fontStretch: "normal",
       lineHeight: 1.17,
       letterSpacing: "0.23px",
       textAlign: "center",
+      BebasNeueBold: "BebasNeueBold",
     },
   },
   typography: {
