@@ -23,9 +23,11 @@ export default {
       HelveticaNeue: "HelveticaNeue",
       fontStretch: "normal",
       lineHeight: 1.17,
-      letterSpacing: "0.23px",
+      letterSpacingBig: "1.23px",
+      letterSpacingSmall: "0.23px",
       textAlign: "center",
-      BebasNeueBold: "BebasNeueBold",
+      bebasNeue: "Bebas Neue",
+      vistasans: "vistasans",
     },
   },
   typography: {
