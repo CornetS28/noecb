@@ -2,7 +2,7 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect,
+  // Redirect,
 } from "react-router-dom";
 import "./App.css";
 
@@ -20,13 +20,11 @@ import Footer from "./components/Layout/Footer";
 
 // Pages
 import home from "./pages/landingPage";
-
 import about from "./pages/about";
 import memeGenerator from "./pages/memeGenerator";
 import resources from "./pages/resources";
 import chat from "./pages/chat";
 import PageNotFound from "./pages/pageNotFound";
-
 import privacyPolicy from "./pages/privacyPolicy";
 
 // Utils Stuff
