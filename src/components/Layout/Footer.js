@@ -22,7 +22,7 @@ const Footer = (props) => {
   return (
     <>
       <Divider className={classes.divider} />
-      <Grid container spacing={16} className={classes.footerWrapper}>
+      <Grid container spacing={10} className={classes.footerWrapper}>
         <Grid item sm={1} xs={12} />
         <Grid container item sm={10} className={classes.footerContainer}>
           <Grid
@@ -56,7 +56,7 @@ const Footer = (props) => {
             xs={12}
             className={classes.footerWrapperRight}
           >
-            <Grid sm={3} xs={12} className={classes.firstParaRight}>
+            <Grid item sm={3} xs={12} className={classes.firstParaRight}>
               <div
                 className={classes.paraTwo}
                 onClick={() => routeChange("/resources")}
@@ -91,7 +91,7 @@ const Footer = (props) => {
              
             </Grid>
             <Grid container item sm={8} className={classes.p}>
-              <Grid sm={12} xs={12} className={classes.secondParaRight}>
+              <Grid item sm={12} xs={12} className={classes.secondParaRight}>
                 <div className={classes.secondParaRightContent}>
                   {" "}
                   <p>For more information</p>
@@ -105,7 +105,7 @@ const Footer = (props) => {
                 </a>
               </Grid>
 
-              <Grid sm={12} xs={12} className={classes.secondParaRight}>
+              <Grid item sm={12} xs={12} className={classes.secondParaRight}>
                 <div edge="start" className={classes.logoWrapper}>
                   <img src={logo} alt="logo" className={classes.logo} />
                 </div>
@@ -115,7 +115,7 @@ const Footer = (props) => {
         </Grid>
 
         <Grid item sm={1} xs={12} />
-        <Grid sm={12} xs={12}>
+        <Grid item sm={12} xs={12}>
           <Divider className={classes.divider} />
         </Grid>
 
@@ -166,11 +166,11 @@ const Footer = (props) => {
 };
 
 const styles = (theme) => ({
-  ...theme.palette.primary,
-  ...theme.palette.main,
+  // ...theme.palette.primary,
+  // ...theme.palette.main,
   footerLink: {
     color: theme.palette.color.black,
-    fontFamily: theme.palette.font.fontFamily,
+    fontFamily: theme.palette.font.HelveticaNeue,
     fontSize: 15,
   },
   footerPara: {

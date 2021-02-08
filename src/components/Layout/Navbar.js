@@ -42,7 +42,7 @@ const Navbar = (props) => {
     });
   };
 
-  const handleAlignment = (event, newAlignment) => {
+  const handleAlignment = (newAlignment) => {
     setAlignment(newAlignment);
   };
 
@@ -348,7 +348,7 @@ const Navbar = (props) => {
         {renderMobileMenu}
       </div>
 
-      <Grid sm={12} xs={12}>
+      <Grid item sm={12} xs={12}>
         <Divider className={classes.divider} />
       </Grid>
     </>
