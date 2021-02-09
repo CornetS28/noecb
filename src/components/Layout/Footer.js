@@ -166,8 +166,8 @@ const Footer = (props) => {
 };
 
 const styles = (theme) => ({
-  // ...theme.palette.primary,
-  // ...theme.palette.main,
+  ...theme.palette.primary,
+  ...theme.palette.main,
   footerLink: {
     color: theme.palette.color.black,
     fontFamily: theme.palette.font.HelveticaNeue,
