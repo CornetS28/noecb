@@ -393,6 +393,21 @@ const LandingPage = (props) => {
           </Grid>
         </Grid>
       </Grid>
+
+      {/* INVITATION TO CHAT BAR */}
+      <Grid item sm={12} xs={12} className={classes.thinBar}>
+        <div className={classes.buttonYellowFatContainer}>
+          <Button variant="contained" className={classes.buttonYellowFat}>
+            Give us a hit
+          </Button>
+        </div>
+      </Grid>
+      {/* BOARD MEMBERS  */}
+      <Grid item sm={12} xs={12} className={classes.boardMemberWrapper}>
+        <Typography variant="h3" component="h2" className={classes.header3}>
+          OUR BOARD LEADERSHIP TEAM
+        </Typography>
+      </Grid>
     </Grid>
   );
 };
@@ -568,10 +583,36 @@ const styles = (theme) => ({
       color: theme.palette.color.white,
     },
   },
+  buttonYellowFat: {
+    backgroundColor: theme.palette.color.yellow,
+    color: theme.palette.color.darkBlue,
+    borderRadius: 0,
+    paddingTop: 0,
+    paddingBottom: 0,
+    paddingLeft: 40,
+    paddingRight: 40,
+    fontFamily: theme.palette.font.bebasNeue,
+    fontSize: 40,
+    marginTop: 40,
+
+    letterSpacing: theme.palette.font.letterSpacingSmall,
+    "&:hover": {
+      backgroundColor: theme.palette.color.darkBlue,
+      color: theme.palette.color.yellow,
+    },
+  },
+  buttonYellowFatContainer: {
+    textAlign: "center",
+  },
 
   thickBar: {
     backgroundColor: theme.palette.color.darkBlue,
     height: 265,
+    color: theme.palette.color.white,
+  },
+  thinBar: {
+    backgroundColor: theme.palette.primary.main,
+    height: 147,
     color: theme.palette.color.white,
   },
   whyNoecb: {
@@ -609,6 +650,9 @@ const styles = (theme) => ({
 
   whyNoecbOne: {
     // margin: 4
+  },
+  boardMemberWrapper: {
+    backgroundColor: theme.palette.color.darkWhite,
   },
 });
 export default withStyles(styles)(LandingPage);
