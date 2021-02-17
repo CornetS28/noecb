@@ -10,6 +10,11 @@ import Paper from "@material-ui/core/Paper";
 // Images
 import LandingImage from "../images/mainHomeImage.png";
 
+// Components
+import Slider from '../components/Slider/Slider'
+
+
+
 const LandingPage = (props) => {
   const { classes } = props;
   return (
@@ -283,7 +288,7 @@ const LandingPage = (props) => {
             item
             xs={12}
             sm={6}
-            md={4}
+            md={6}
             lg={3}
             className={classes.whyNoecbOne}
           >
@@ -311,7 +316,7 @@ const LandingPage = (props) => {
             item
             xs={12}
             sm={6}
-            md={4}
+            md={6}
             lg={3}
             className={classes.whyNoecbOne}
           >
@@ -339,7 +344,7 @@ const LandingPage = (props) => {
             item
             xs={12}
             sm={6}
-            md={4}
+            md={6}
             lg={3}
             className={classes.whyNoecbOne}
           >
@@ -367,7 +372,7 @@ const LandingPage = (props) => {
             item
             xs={12}
             sm={6}
-            md={4}
+            md={6}
             lg={3}
             className={classes.whyNoecbOne}
           >
@@ -402,11 +407,15 @@ const LandingPage = (props) => {
           </Button>
         </div>
       </Grid>
+
       {/* BOARD MEMBERS  */}
       <Grid item sm={12} xs={12} className={classes.boardMemberWrapper}>
         <Typography variant="h3" component="h2" className={classes.header3}>
           OUR BOARD LEADERSHIP TEAM
         </Typography>
+        <Grid item  xs={12} sm={10} md={8} lg={7} className={classes.BoardMemberSection}>
+          <Slider />
+        </Grid>
       </Grid>
     </Grid>
   );
@@ -425,7 +434,7 @@ const styles = (theme) => ({
     lineHeight: 1.5,
     textAlign: "center",
     backgroundColor: theme.palette.color.white,
-    fontStyle: theme.palette.font.BebasNeueBold,
+    fontFamily: theme.palette.font.BebasNeueBold,
   },
   membersCountText: {
     textTransform: "uppercase",
@@ -449,6 +458,13 @@ const styles = (theme) => ({
   },
   subSection2: {
     margin: "50px auto 50px auto",
+    backgroundColor: theme.palette.color.white,
+    [theme.breakpoints.down(600)]: {
+      margin: 40,
+    },
+  },
+  BoardMemberSection: {
+    margin: "50px auto 80px auto",
     backgroundColor: theme.palette.color.white,
     [theme.breakpoints.down(600)]: {
       margin: 40,
@@ -648,9 +664,6 @@ const styles = (theme) => ({
     backgroundColor: "grey",
   },
 
-  whyNoecbOne: {
-    // margin: 4
-  },
   boardMemberWrapper: {
     backgroundColor: theme.palette.color.darkWhite,
   },
