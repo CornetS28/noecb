@@ -399,7 +399,7 @@ const styles = (theme) => ({
     width: "125px",
     height: "100px",
     marginTop: -13,
-    marginBottom: -18,
+    marginBottom: -25,
   },
   mobileMenueColor: {
     backgroundColor: theme.palette.color.lemonGreen,
