@@ -18,9 +18,9 @@ export default {
       yellow: "#fdb51d",
       darkWhite: "#E4E5D1",
     },
-
+// Newsreader'
     font: {
-      HelveticaNeue: "HelveticaNeue",
+      HelveticaNeue: "Helvetica Neue",
       fontStretch: "normal",
       lineHeight: 1.17,
       letterSpacingBig: "1.23px",

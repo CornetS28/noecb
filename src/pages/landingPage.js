@@ -11,9 +11,7 @@ import Paper from "@material-ui/core/Paper";
 import LandingImage from "../images/mainHomeImage.png";
 
 // Components
-import Slider from '../components/Slider/Slider'
-
-
+import Slider from "../components/Slider/Slider";
 
 const LandingPage = (props) => {
   const { classes } = props;
@@ -55,7 +53,13 @@ const LandingPage = (props) => {
               lg={6}
               className={classes.leftContainer}
             >
-              <Grid container item sm={12} xs={12}>
+              <Grid
+                container
+                item
+                sm={12}
+                xs={11}
+                className={classes.textAndButtons}
+              >
                 <Grid item sm={11} xs={12} className={classes.subContainerOne}>
                   <Typography
                     variant="h4"
@@ -83,9 +87,35 @@ const LandingPage = (props) => {
             </Grid>
 
             <Grid item sm={6} xs={12} className={classes.rightContainer}>
-              <Grid container item sm={12} xs={12}>
+              <Grid
+                container
+                item
+                sm={12}
+                xs={11}
+                className={classes.textAndButtons}
+              >
                 <Grid item sm={11} xs={12} className={classes.subContainerOne}>
-                  asdfg
+                  <Typography
+                    variant="h4"
+                    component="h2"
+                    className={classes.header}
+                  >
+                    Engagements
+                  </Typography>
+                  <Typography
+                    variant="h4"
+                    component="h2"
+                    className={classes.header}
+                  >
+                    Community and Social bond
+                  </Typography>
+                  <p className={classes.paragraph}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit.
+                  </p>
                 </Grid>
               </Grid>
             </Grid>
@@ -108,7 +138,13 @@ const LandingPage = (props) => {
               lg={6}
               className={classes.leftContainer}
             >
-              <Grid container item sm={12} xs={12}>
+              <Grid
+                container
+                item
+                sm={12}
+                xs={11}
+                className={classes.textAndButtons}
+              >
                 <Grid item sm={11} xs={12} className={classes.subContainerTwo}>
                   <Typography
                     variant="h4"
@@ -144,7 +180,13 @@ const LandingPage = (props) => {
               lg={6}
               className={classes.rightContainer}
             >
-              <Grid container item sm={12} xs={12}>
+              <Grid
+                container
+                item
+                sm={12}
+                xs={11}
+                className={classes.textAndButtons}
+              >
                 <Grid item sm={11} xs={12} className={classes.subContainerTwo}>
                   <Typography
                     variant="h4"
@@ -186,7 +228,13 @@ const LandingPage = (props) => {
               lg={6}
               className={classes.leftContainer}
             >
-              <Grid container item sm={12} xs={12}>
+              <Grid
+                container
+                item
+                sm={12}
+                xs={11}
+                className={classes.textAndButtons}
+              >
                 <Grid
                   item
                   sm={11}
@@ -227,7 +275,13 @@ const LandingPage = (props) => {
               lg={6}
               className={classes.rightContainer}
             >
-              <Grid container item sm={12} xs={12}>
+              <Grid
+                container
+                item
+                sm={12}
+                xs={11}
+                className={classes.textAndButtons}
+              >
                 <Grid
                   item
                   sm={11}
@@ -290,10 +344,16 @@ const LandingPage = (props) => {
             sm={6}
             md={6}
             lg={3}
-            className={classes.whyNoecbOne}
+            className={classes.whyNoecbContainer}
           >
             <Paper elevation={0} className={classes.whyNoecbPaper1}>
-              <div className={classes.whyNoecbOneImg1}>Image</div>
+              <div className={classes.whyNoecbImg}>
+                <img
+                  src={LandingImage}
+                  alt="portrait"
+                  className={classes.image}
+                />
+              </div>
               <div className={classes.whyNoecbHeader}>
                 <Typography
                   variant="h4"
@@ -318,10 +378,19 @@ const LandingPage = (props) => {
             sm={6}
             md={6}
             lg={3}
-            className={classes.whyNoecbOne}
+            className={classes.whyNoecbContainer}
           >
             <Paper elevation={0} className={classes.whyNoecbPaper2}>
-              <div className={classes.whyNoecbOneImg1}>Image</div>
+              <div className={classes.whyNoecbOneImg1}>
+                {" "}
+                <div className={classes.whyNoecbImg}>
+                  <img
+                    src={LandingImage}
+                    alt="portrait"
+                    className={classes.image}
+                  />
+                </div>
+              </div>
               <div className={classes.whyNoecbHeader}>
                 <Typography
                   variant="h4"
@@ -346,10 +415,19 @@ const LandingPage = (props) => {
             sm={6}
             md={6}
             lg={3}
-            className={classes.whyNoecbOne}
+            className={classes.whyNoecbContainer}
           >
             <Paper elevation={0} className={classes.whyNoecbPaper3}>
-              <div className={classes.whyNoecbOneImg1}>Image</div>
+              <div className={classes.whyNoecbOneImg1}>
+                {" "}
+                <div className={classes.whyNoecbImg}>
+                  <img
+                    src={LandingImage}
+                    alt="portrait"
+                    className={classes.image}
+                  />
+                </div>
+              </div>
               <div className={classes.whyNoecbHeader}>
                 <Typography
                   variant="h4"
@@ -374,10 +452,19 @@ const LandingPage = (props) => {
             sm={6}
             md={6}
             lg={3}
-            className={classes.whyNoecbOne}
+            className={classes.whyNoecbContainer}
           >
             <Paper elevation={0} className={classes.whyNoecbPaper4}>
-              <div className={classes.whyNoecbOneImg1}>Image</div>
+              <div className={classes.whyNoecbOneImg1}>
+                {" "}
+                <div className={classes.whyNoecbImg}>
+                  <img
+                    src={LandingImage}
+                    alt="portrait"
+                    className={classes.image}
+                  />
+                </div>
+              </div>
               <div className={classes.whyNoecbHeader}>
                 <Typography
                   variant="h4"
@@ -413,7 +500,14 @@ const LandingPage = (props) => {
         <Typography variant="h3" component="h2" className={classes.header3}>
           OUR BOARD LEADERSHIP TEAM
         </Typography>
-        <Grid item  xs={12} sm={10} md={8} lg={7} className={classes.BoardMemberSection}>
+        <Grid
+          item
+          xs={12}
+          sm={10}
+          md={8}
+          lg={7}
+          className={classes.BoardMemberSection}
+        >
           <Slider />
         </Grid>
       </Grid>
@@ -460,7 +554,7 @@ const styles = (theme) => ({
     margin: "50px auto 50px auto",
     backgroundColor: theme.palette.color.white,
     [theme.breakpoints.down(600)]: {
-      margin: 40,
+      margin: "40px auto 40px auto",
     },
   },
   BoardMemberSection: {
@@ -472,23 +566,48 @@ const styles = (theme) => ({
   },
   multipleSectionsContainer: {
     margin: "50px 50px -13px 50px",
+    [theme.breakpoints.down(960)]: {
+      margin: "30px auto -30px auto",
+      //  backgroundColor: 'green'
+    },
+
+    [theme.breakpoints.down(421)]: {
+      margin: "50px 20px -50px 20px",
+    },
+    [theme.breakpoints.down(376)]: {
+      margin: "50px 5px -50px 5px",
+    },
   },
+  // leftContainer: {
+  //   [theme.breakpoints.down(421)]: {
+  //     // marginTop: -25,
+  //   },
+  //   // backgroundColor: "green",
+  // },
 
   subContainerOne: {
     margin: "auto",
+    padding: 10,
     [theme.breakpoints.down(960)]: {
       marginBottom: 40,
     },
   },
+  textAndButtons: {
+    margin: "auto",
+  },
+
   subContainerTwo: {
     margin: "auto",
     padding: 10,
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.color.white,
     fontFamily: theme.palette.font.HelveticaNeue,
-    // height: 210,
     [theme.breakpoints.down(960)]: {
       marginBottom: 40,
+    },
+    [theme.breakpoints.down(421)]: {
+      // backgroundColor: 'red',
+      // marginTop: 20,
     },
   },
   subContainerThree: {
@@ -516,6 +635,9 @@ const styles = (theme) => ({
     textAlign: "center",
     paddingTop: 50,
     letterSpacing: theme.palette.font.letterSpacingBig,
+    [theme.breakpoints.down(543)]: {
+      fontSize: 30,
+    },
   },
   header4: {
     textTransform: "uppercase",
@@ -579,8 +701,6 @@ const styles = (theme) => ({
   buttonWrapper: {
     margin: "auto",
     padding: "auto",
-
-    backgroundColor: "red",
   },
   buttonYellow: {
     backgroundColor: theme.palette.color.yellow,
@@ -641,27 +761,58 @@ const styles = (theme) => ({
     width: "84%",
     backgroundColor: theme.palette.color.yellow,
     color: theme.palette.color.white,
+    [theme.breakpoints.down(600)]: {
+      width: "100%",
+    },
   },
   whyNoecbPaper2: {
     width: "84%",
     backgroundColor: theme.palette.color.red,
     color: theme.palette.color.white,
+    [theme.breakpoints.down(600)]: {
+      width: "100%",
+    },
   },
   whyNoecbPaper3: {
     width: "84%",
     backgroundColor: theme.palette.color.blueGray,
     color: theme.palette.color.white,
+    [theme.breakpoints.down(600)]: {
+      width: "100%",
+    },
   },
   whyNoecbPaper4: {
     width: "84%",
     backgroundColor: theme.palette.color.darkBlue,
     color: theme.palette.color.white,
+    [theme.breakpoints.down(600)]: {
+      width: "100%",
+    },
   },
 
   whyNoecbOneImg1: {
     width: "100%",
     height: 150,
     backgroundColor: "grey",
+  },
+
+  whyNoecbImg: {
+    width: "100%",
+    height: 150,
+    backgroundColor: "grey",
+  },
+  image: {
+    margin: "auto",
+    flexShrink: 0,
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+  },
+  whyNoecbContainer: {
+    [theme.breakpoints.down(600)]: {
+      marginLeft: 10,
+      marginRight: 10,
+    },
   },
 
   boardMemberWrapper: {
