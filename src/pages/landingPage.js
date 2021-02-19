@@ -568,7 +568,6 @@ const styles = (theme) => ({
     margin: "50px 50px -13px 50px",
     [theme.breakpoints.down(960)]: {
       margin: "30px auto -30px auto",
-      //  backgroundColor: 'green'
     },
 
     [theme.breakpoints.down(421)]: {
@@ -578,12 +577,6 @@ const styles = (theme) => ({
       margin: "50px 5px -50px 5px",
     },
   },
-  // leftContainer: {
-  //   [theme.breakpoints.down(421)]: {
-  //     // marginTop: -25,
-  //   },
-  //   // backgroundColor: "green",
-  // },
 
   subContainerOne: {
     margin: "auto",
@@ -604,10 +597,6 @@ const styles = (theme) => ({
     fontFamily: theme.palette.font.HelveticaNeue,
     [theme.breakpoints.down(960)]: {
       marginBottom: 40,
-    },
-    [theme.breakpoints.down(421)]: {
-      // backgroundColor: 'red',
-      // marginTop: 20,
     },
   },
   subContainerThree: {
@@ -759,6 +748,7 @@ const styles = (theme) => ({
   },
   whyNoecbPaper1: {
     width: "84%",
+    margin: "auto",
     backgroundColor: theme.palette.color.yellow,
     color: theme.palette.color.white,
     [theme.breakpoints.down(600)]: {
@@ -767,6 +757,7 @@ const styles = (theme) => ({
   },
   whyNoecbPaper2: {
     width: "84%",
+    margin: "auto",
     backgroundColor: theme.palette.color.red,
     color: theme.palette.color.white,
     [theme.breakpoints.down(600)]: {
@@ -775,6 +766,7 @@ const styles = (theme) => ({
   },
   whyNoecbPaper3: {
     width: "84%",
+    margin: "auto",
     backgroundColor: theme.palette.color.blueGray,
     color: theme.palette.color.white,
     [theme.breakpoints.down(600)]: {
@@ -783,6 +775,7 @@ const styles = (theme) => ({
   },
   whyNoecbPaper4: {
     width: "84%",
+    margin: "auto",
     backgroundColor: theme.palette.color.darkBlue,
     color: theme.palette.color.white,
     [theme.breakpoints.down(600)]: {
