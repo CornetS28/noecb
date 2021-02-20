@@ -5,7 +5,6 @@ import Grid from "@material-ui/core/Grid";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import Paper from "@material-ui/core/Paper";
 
 // Images
 import LandingImage from "../images/mainHomeImage.png";
@@ -14,6 +13,7 @@ import DiversityPic from "../images/diversityPic.png";
 // Components
 import Slider from "../components/LandingPageComponents/Slider/Slider";
 import Diversity from "../components/LandingPageComponents/Diversity";
+import Purpose from "../components/LandingPageComponents/Purpose";
 
 const LandingPage = (props) => {
   const { classes } = props;
@@ -82,7 +82,16 @@ const LandingPage = (props) => {
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                     ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit.
+                    Duis aute irure dolor in reprehenderit in voluptate
+                    velitullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velitullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit.
                   </p>
                 </Grid>
               </Grid>
@@ -95,7 +104,7 @@ const LandingPage = (props) => {
               sm={12}
               md={6}
               lg={6}
-              className={classes.leftContainer}
+              className={classes.diversityContainer}
             >
               <Grid
                 container
@@ -116,40 +125,6 @@ const LandingPage = (props) => {
                 <Grid item sm={12} xs={12} className={classes.emptySpace1} />
               </Grid>
             </Grid>
-
-            {/* <Grid item sm={6} xs={12} className={classes.rightContainer}>
-              <Grid
-                container
-                item
-                sm={12}
-                xs={11}
-                className={classes.textAndButtons}
-              >
-                <Grid item sm={11} xs={12} className={classes.subContainerOne}>
-                  <Typography
-                    variant="h4"
-                    component="h2"
-                    className={classes.header}
-                  >
-                    Engagements
-                  </Typography>
-                  <Typography
-                    variant="h4"
-                    component="h2"
-                    className={classes.header}
-                  >
-                    Community and Social bond
-                  </Typography>
-                  <p className={classes.paragraph}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit.
-                  </p>
-                </Grid>
-              </Grid>
-            </Grid> */}
           </Grid>
 
           {/* MULTIPLE SECTION PART 2 */}
@@ -221,152 +196,50 @@ const LandingPage = (props) => {
         <Typography variant="h3" component="h2" className={classes.header3}>
           Why NOECB?
         </Typography>
+
+        {/* PURPOSE */}
         <Grid container item sm={8} xs={12} className={classes.subSection2}>
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={6}
-            lg={3}
-            className={classes.whyNoecbContainer}
-          >
-            <Paper elevation={0} className={classes.whyNoecbPaper1}>
-              <div className={classes.whyNoecbImg}>
-                <img
-                  src={LandingImage}
-                  alt="portrait"
-                  className={classes.image}
-                />
-              </div>
-              <div className={classes.whyNoecbHeader}>
-                <Typography
-                  variant="h4"
-                  component="h2"
-                  className={classes.header4b}
-                >
-                  Support
-                </Typography>
-                <p className={classes.paragraph5}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+          <Purpose
+            paperColor={classes.paperYellow}
+            purposeImage={LandingImage}
+            header="Support"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit.
-                </p>
-              </div>
-            </Paper>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={6}
-            lg={3}
-            className={classes.whyNoecbContainer}
-          >
-            <Paper elevation={0} className={classes.whyNoecbPaper2}>
-              <div className={classes.whyNoecbOneImg1}>
-                {" "}
-                <div className={classes.whyNoecbImg}>
-                  <img
-                    src={LandingImage}
-                    alt="portrait"
-                    className={classes.image}
-                  />
-                </div>
-              </div>
-              <div className={classes.whyNoecbHeader}>
-                <Typography
-                  variant="h4"
-                  component="h2"
-                  className={classes.header4b}
-                >
-                  Support
-                </Typography>
-                <p className={classes.paragraph5}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  irure dolor in reprehenderit in voluptate velit."
+          />
+          <Purpose
+            paperColor={classes.paperRed}
+            purposeImage={LandingImage}
+            header="Support"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit.
-                </p>
-              </div>
-            </Paper>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={6}
-            lg={3}
-            className={classes.whyNoecbContainer}
-          >
-            <Paper elevation={0} className={classes.whyNoecbPaper3}>
-              <div className={classes.whyNoecbOneImg1}>
-                {" "}
-                <div className={classes.whyNoecbImg}>
-                  <img
-                    src={LandingImage}
-                    alt="portrait"
-                    className={classes.image}
-                  />
-                </div>
-              </div>
-              <div className={classes.whyNoecbHeader}>
-                <Typography
-                  variant="h4"
-                  component="h2"
-                  className={classes.header4b}
-                >
-                  Support
-                </Typography>
-                <p className={classes.paragraph5}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  irure dolor in reprehenderit in voluptate velit."
+          />
+
+          <Purpose
+            paperColor={classes.paperBlueGrey}
+            purposeImage={LandingImage}
+            header="Support"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit.
-                </p>
-              </div>
-            </Paper>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={6}
-            lg={3}
-            className={classes.whyNoecbContainer}
-          >
-            <Paper elevation={0} className={classes.whyNoecbPaper4}>
-              <div className={classes.whyNoecbOneImg1}>
-                {" "}
-                <div className={classes.whyNoecbImg}>
-                  <img
-                    src={LandingImage}
-                    alt="portrait"
-                    className={classes.image}
-                  />
-                </div>
-              </div>
-              <div className={classes.whyNoecbHeader}>
-                <Typography
-                  variant="h4"
-                  component="h2"
-                  className={classes.header4b}
-                >
-                  Support
-                </Typography>
-                <p className={classes.paragraph5}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  irure dolor in reprehenderit in voluptate velit."
+          />
+          <Purpose
+            paperColor={classes.paperBlue}
+            purposeImage={LandingImage}
+            header="Support"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit.
-                </p>
-              </div>
-            </Paper>
-          </Grid>
+                  irure dolor in reprehenderit in voluptate velit."
+          />
         </Grid>
       </Grid>
 
@@ -456,7 +329,6 @@ const styles = (theme) => ({
   },
   multipleSectionsContainer: {
     margin: "50px 50px -13px 50px",
-    // backgroundColor: 'red',
     [theme.breakpoints.down(960)]: {
       margin: "30px auto -30px auto",
     },
@@ -469,7 +341,6 @@ const styles = (theme) => ({
     },
     [theme.breakpoints.down(415)]: {
       marginTop: 30,
-      // marginTop: 50,
     },
   },
 
@@ -486,7 +357,7 @@ const styles = (theme) => ({
   textAndButtons: {
     margin: "auto auto -5px auto",
   },
-  leftContainer: {
+  diversityContainer: {
     [theme.breakpoints.down(769)]: {
       marginBottom: -23,
     },
@@ -500,24 +371,7 @@ const styles = (theme) => ({
       marginBottom: 0,
     },
   },
-
-  subContainerTwo: {
-    margin: "auto",
-    padding: 10,
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.color.white,
-    fontFamily: theme.palette.font.HelveticaNeue,
-  },
-  subContainerThree: {
-    margin: "auto",
-    padding: 10,
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.color.white,
-    fontFamily: theme.palette.font.HelveticaNeue,
-    [theme.breakpoints.down(960)]: {
-      marginBottom: 40,
-    },
-  },
+ 
   header: {
     textTransform: "uppercase",
     fontWeight: 600,
@@ -536,24 +390,7 @@ const styles = (theme) => ({
       fontSize: 30,
     },
   },
-  header4: {
-    textTransform: "uppercase",
-    fontWeight: 300,
-    fontFamily: theme.palette.font.bebasNeue,
-    fontStyle: "bold",
-    textAlign: "center",
-    paddingTop: 200,
-  },
-  header4b: {
-    textTransform: "uppercase",
-    fontWeight: 300,
-    fontFamily: theme.palette.font.bebasNeue,
-    fontStyle: "bold",
-    textAlign: "left",
-    paddingTop: 20,
-    paddingLeft: 20,
-    paddingRight: 20,
-  },
+ 
   paragraph4: {
     fontStyle: "bold",
     textAlign: "center",
@@ -567,13 +404,6 @@ const styles = (theme) => ({
     lineHeight: 1.3,
   },
 
-  paragraph5: {
-    fontFamily: theme.palette.font.HelveticaNeue,
-    lineHeight: 1.3,
-    paddingLeft: 20,
-    paddingRight: 20,
-    paddingBottom: 20,
-  },
   emptySpace1: {
     display: "none",
     [theme.breakpoints.down(960)]: {
@@ -590,25 +420,22 @@ const styles = (theme) => ({
       height: 50,
     },
   },
-  button: {
-    textTransform: "uppercase",
-    color: theme.palette.color.white,
-    backgroundColor: theme.palette.color.darkBlue,
-    fontFamily: theme.palette.font.HelveticaNeue,
-    borderRadius: 0,
-    marginBottom: 0,
-    marginTop: 10,
-    marginRight: 10,
-    lineHeight: 2,
-    "&:hover": {
-      backgroundColor: theme.palette.color.yellow,
-      color: theme.palette.color.darkBlue,
-    },
-  },
-  buttonWrapper: {
-    margin: "auto",
-    padding: "auto",
-  },
+  // button: {
+  //   textTransform: "uppercase",
+  //   color: theme.palette.color.white,
+  //   backgroundColor: theme.palette.color.darkBlue,
+  //   fontFamily: theme.palette.font.HelveticaNeue,
+  //   borderRadius: 0,
+  //   marginBottom: 0,
+  //   marginTop: 10,
+  //   marginRight: 10,
+  //   lineHeight: 2,
+  //   "&:hover": {
+  //     backgroundColor: theme.palette.color.yellow,
+  //     color: theme.palette.color.darkBlue,
+  //   },
+  // },
+
   buttonYellow: {
     backgroundColor: theme.palette.color.yellow,
     color: theme.palette.color.darkBlue,
@@ -679,10 +506,7 @@ const styles = (theme) => ({
   whyNoecb: {
     backgroundColor: theme.palette.color.white,
   },
-  whyNoecbHeader: {
-    // marginTop: -160,
-  },
-  whyNoecbPaper1: {
+  paperYellow: {
     width: "84%",
     margin: "auto",
     backgroundColor: theme.palette.color.yellow,
@@ -691,7 +515,7 @@ const styles = (theme) => ({
       width: "100%",
     },
   },
-  whyNoecbPaper2: {
+  paperRed: {
     width: "84%",
     margin: "auto",
     backgroundColor: theme.palette.color.red,
@@ -700,7 +524,7 @@ const styles = (theme) => ({
       width: "100%",
     },
   },
-  whyNoecbPaper3: {
+  paperBlueGrey: {
     width: "84%",
     margin: "auto",
     backgroundColor: theme.palette.color.blueGray,
@@ -709,7 +533,7 @@ const styles = (theme) => ({
       width: "100%",
     },
   },
-  whyNoecbPaper4: {
+  paperBlue: {
     width: "84%",
     margin: "auto",
     backgroundColor: theme.palette.color.darkBlue,
@@ -718,18 +542,6 @@ const styles = (theme) => ({
       width: "100%",
     },
   },
-
-  whyNoecbOneImg1: {
-    width: "100%",
-    height: 150,
-    backgroundColor: "grey",
-  },
-
-  whyNoecbImg: {
-    width: "100%",
-    height: 150,
-    backgroundColor: "grey",
-  },
   image: {
     margin: "auto",
     flexShrink: 0,
@@ -737,15 +549,10 @@ const styles = (theme) => ({
     height: "100%",
     objectFit: "cover",
   },
-  whyNoecbContainer: {
-    [theme.breakpoints.down(600)]: {
-      marginLeft: 10,
-      marginRight: 10,
-    },
-  },
+ 
   diversityImage: {
-     width: "100%",
-    height:  330,
+    width: "100%",
+    height: 330,
     backgroundColor: "grey",
   },
 
