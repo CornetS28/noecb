@@ -536,12 +536,18 @@ const styles = (theme) => ({
     fontWeight: 500,
     color: theme.palette.color.darkBlue,
     fontFamily: theme.palette.font.bebasNeue,
+    [theme.breakpoints.down(600)]: {
+      fontSize: 35,
+    },
   },
   number: {
     fontSize: 55,
     fontWeight: 800,
     color: theme.palette.color.yellow,
     fontFamily: theme.palette.font.bebasNeue,
+    [theme.breakpoints.down(600)]: {
+      fontSize: 45,
+    },
   },
   multipleSectionsWrapper: {
     backgroundColor: theme.palette.color.darkWhite,
@@ -707,6 +713,9 @@ const styles = (theme) => ({
       backgroundColor: theme.palette.color.blueGray,
       color: theme.palette.color.white,
     },
+    [theme.breakpoints.down(321)]: {
+      marginTop: 20,
+    },
   },
   buttonYellowFat: {
     backgroundColor: theme.palette.color.yellow,
@@ -719,26 +728,41 @@ const styles = (theme) => ({
     fontFamily: theme.palette.font.bebasNeue,
     fontSize: 40,
     marginTop: 40,
-
     letterSpacing: theme.palette.font.letterSpacingSmall,
     "&:hover": {
       backgroundColor: theme.palette.color.darkBlue,
       color: theme.palette.color.yellow,
     },
+    [theme.breakpoints.down(600)]: {
+      fontSize: 30,
+      marginTop: 27,
+    },
+    [theme.breakpoints.down(541)]: {
+      marginTop: 26,
+    },
+    [theme.breakpoints.down(415)]: {
+      marginTop: 25,
+    },
   },
   buttonYellowFatContainer: {
     textAlign: "center",
   },
-
   thickBar: {
     backgroundColor: theme.palette.color.darkBlue,
     height: 265,
     color: theme.palette.color.white,
+    [theme.breakpoints.down(415)]: {
+      height: 250,
+    },
   },
+
   thinBar: {
     backgroundColor: theme.palette.primary.main,
     height: 147,
     color: theme.palette.color.white,
+    [theme.breakpoints.down(600)]: {
+      height: 100,
+    },
   },
   whyNoecb: {
     backgroundColor: theme.palette.color.white,
