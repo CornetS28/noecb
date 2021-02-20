@@ -15,6 +15,10 @@ import Slider from "../components/LandingPageComponents/Slider/Slider";
 import Diversity from "../components/LandingPageComponents/Diversity";
 import Purpose from "../components/LandingPageComponents/Purpose";
 
+import DB from '../utils/dbSchema'
+
+// console.log("Data:", db.diversity[0].title);
+
 const LandingPage = (props) => {
   const { classes } = props;
   return (
@@ -136,40 +140,32 @@ const LandingPage = (props) => {
             className={classes.multipleSectionsContainer}
           >
             <Diversity
-              title="Community and Social bond"
-              summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+              title={DB.diversity[0].title}
+              summary={DB.diversity[0].summary}
               buttonOne="something"
-              buttonTwo="something"
-              buttonThree="something"
+              buttonTwo="something1"
+              buttonThree="something2"
             />
             <Diversity
-              title="Community and Social bond"
-              summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+              title={DB.diversity[1].title}
+              summary={DB.diversity[1].summary}
               buttonOne="something"
-              buttonTwo="something"
-              buttonThree="something"
+              buttonTwo="something1"
+              buttonThree="something2"
             />
             <Diversity
-              title="Community and Social bond"
-              summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+              title={DB.diversity[2].title}
+              summary={DB.diversity[2].summary}
               buttonOne="something"
-              buttonTwo="something"
-              buttonThree="something"
+              buttonTwo="something1"
+              buttonThree="something2"
             />
             <Diversity
-              title="Community and Social bond"
-              summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+              title={DB.diversity[3].title}
+              summary={DB.diversity[3].summary}
               buttonOne="something"
-              buttonTwo="something"
-              buttonThree="something"
+              buttonTwo="something1"
+              buttonThree="something2"
             />
           </Grid>
 
@@ -201,44 +197,28 @@ const LandingPage = (props) => {
         <Grid container item sm={8} xs={12} className={classes.subSection2}>
           <Purpose
             paperColor={classes.paperYellow}
-            purposeImage={LandingImage}
-            header="Support"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit."
+            purposeImage={DB.purpose[0].image}
+            header={DB.purpose[0].header}
+            description={DB.purpose[0].description}
           />
           <Purpose
             paperColor={classes.paperRed}
-            purposeImage={LandingImage}
-            header="Support"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit."
+            purposeImage={DB.purpose[1].image}
+            header={DB.purpose[1].header}
+            description={DB.purpose[1].description}
           />
 
           <Purpose
             paperColor={classes.paperBlueGrey}
-            purposeImage={LandingImage}
-            header="Support"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit."
+            purposeImage={DB.purpose[2].image}
+            header={DB.purpose[2].header}
+            description={DB.purpose[2].description}
           />
           <Purpose
             paperColor={classes.paperBlue}
-            purposeImage={LandingImage}
-            header="Support"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit."
+            purposeImage={DB.purpose[3].image}
+            header={DB.purpose[3].header}
+            description={DB.purpose[3].description}
           />
         </Grid>
       </Grid>
@@ -371,7 +351,7 @@ const styles = (theme) => ({
       marginBottom: 0,
     },
   },
- 
+
   header: {
     textTransform: "uppercase",
     fontWeight: 600,
@@ -390,7 +370,7 @@ const styles = (theme) => ({
       fontSize: 30,
     },
   },
- 
+
   paragraph4: {
     fontStyle: "bold",
     textAlign: "center",
@@ -549,7 +529,7 @@ const styles = (theme) => ({
     height: "100%",
     objectFit: "cover",
   },
- 
+
   diversityImage: {
     width: "100%",
     height: 330,
