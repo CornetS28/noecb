@@ -1,11 +1,10 @@
-import React from 'react';
+import React from "react";
 
 // MUI Stuff
 import Grid from "@material-ui/core/Grid";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-
 
 const Diversity = ({
   classes,
@@ -49,7 +48,7 @@ const Diversity = ({
 
 const styles = (theme) => ({
   leftContainer: {
-marginBottom: 30
+    marginBottom: 30,
   },
   textAndButtons: {
     margin: "auto",
