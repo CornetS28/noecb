@@ -9,9 +9,11 @@ import Paper from "@material-ui/core/Paper";
 
 // Images
 import LandingImage from "../images/mainHomeImage.png";
+import DiversityPic from "../images/diversityPic.png";
 
 // Components
-import Slider from "../components/Slider/Slider";
+import Slider from "../components/LandingPageComponents/Slider/Slider";
+import Diversity from "../components/LandingPageComponents/Diversity";
 
 const LandingPage = (props) => {
   const { classes } = props;
@@ -51,7 +53,7 @@ const LandingPage = (props) => {
               sm={12}
               md={6}
               lg={6}
-              className={classes.leftContainer}
+              className={classes.dsd}
             >
               <Grid
                 container
@@ -86,7 +88,36 @@ const LandingPage = (props) => {
               </Grid>
             </Grid>
 
-            <Grid item sm={6} xs={12} className={classes.rightContainer}>
+            <Grid
+              container
+              item
+              xs={12}
+              sm={12}
+              md={6}
+              lg={6}
+              className={classes.leftContainer}
+            >
+              <Grid
+                container
+                item
+                sm={12}
+                xs={11}
+                className={classes.textAndButtons}
+              >
+                <Grid item sm={11} xs={12} className={classes.subContainerOne}>
+                  <div className={classes.diversityImage}>
+                    <img
+                      src={DiversityPic}
+                      alt="portrait"
+                      className={classes.image}
+                    />
+                  </div>
+                </Grid>
+                <Grid item sm={12} xs={12} className={classes.emptySpace1} />
+              </Grid>
+            </Grid>
+
+            {/* <Grid item sm={6} xs={12} className={classes.rightContainer}>
               <Grid
                 container
                 item
@@ -118,7 +149,7 @@ const LandingPage = (props) => {
                   </p>
                 </Grid>
               </Grid>
-            </Grid>
+            </Grid> */}
           </Grid>
 
           {/* MULTIPLE SECTION PART 2 */}
@@ -129,191 +160,44 @@ const LandingPage = (props) => {
             xs={12}
             className={classes.multipleSectionsContainer}
           >
-            <Grid
-              container
-              item
-              xs={12}
-              sm={12}
-              md={6}
-              lg={6}
-              className={classes.leftContainer}
-            >
-              <Grid
-                container
-                item
-                sm={12}
-                xs={11}
-                className={classes.textAndButtons}
-              >
-                <Grid item sm={11} xs={12} className={classes.subContainerTwo}>
-                  <Typography
-                    variant="h4"
-                    component="h2"
-                    className={classes.header}
-                  >
-                    Community and Social bond
-                  </Typography>
-                  <p className={classes.paragraph}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+            <Diversity
+              title="Community and Social bond"
+              summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-                  </p>
-
-                  <Button variant="contained" className={classes.button}>
-                    something
-                  </Button>
-                  <Button variant="contained" className={classes.button}>
-                    something asas
-                  </Button>
-                  <Button variant="contained" className={classes.button}>
-                    asas
-                  </Button>
-                </Grid>
-              </Grid>
-            </Grid>
-
-            <Grid
-              item
-              xs={12}
-              sm={12}
-              md={6}
-              lg={6}
-              className={classes.rightContainer}
-            >
-              <Grid
-                container
-                item
-                sm={12}
-                xs={11}
-                className={classes.textAndButtons}
-              >
-                <Grid item sm={11} xs={12} className={classes.subContainerTwo}>
-                  <Typography
-                    variant="h4"
-                    component="h2"
-                    className={classes.header}
-                  >
-                    Community and Social bond
-                  </Typography>
-                  <p className={classes.paragraph}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+              buttonOne="something"
+              buttonTwo="something"
+              buttonThree="something"
+            />
+            <Diversity
+              title="Community and Social bond"
+              summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-                  </p>
-                  <Button variant="contained" className={classes.button}>
-                    something asas
-                  </Button>
-                  <Button variant="contained" className={classes.button}>
-                    asas
-                  </Button>
-                </Grid>
-              </Grid>
-            </Grid>
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+              buttonOne="something"
+              buttonTwo="something"
+              buttonThree="something"
+            />
+            <Diversity
+              title="Community and Social bond"
+              summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+              buttonOne="something"
+              buttonTwo="something"
+              buttonThree="something"
+            />
+            <Diversity
+              title="Community and Social bond"
+              summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+              buttonOne="something"
+              buttonTwo="something"
+              buttonThree="something"
+            />
           </Grid>
 
-          {/* MULTIPLE SECTION PART 3 */}
-          <Grid
-            container
-            item
-            sm={12}
-            xs={12}
-            className={classes.multipleSectionsContainer}
-          >
-            <Grid
-              container
-              item
-              xs={12}
-              sm={12}
-              md={6}
-              lg={6}
-              className={classes.leftContainer}
-            >
-              <Grid
-                container
-                item
-                sm={12}
-                xs={11}
-                className={classes.textAndButtons}
-              >
-                <Grid
-                  item
-                  sm={11}
-                  xs={12}
-                  className={classes.subContainerThree}
-                >
-                  <Typography
-                    variant="h4"
-                    component="h2"
-                    className={classes.header}
-                  >
-                    Community and Social bond
-                  </Typography>
-                  <p className={classes.paragraph}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-                  </p>
-
-                  <Button variant="contained" className={classes.button}>
-                    something
-                  </Button>
-                  <Button variant="contained" className={classes.button}>
-                    something asas
-                  </Button>
-                  <Button variant="contained" className={classes.button}>
-                    asas
-                  </Button>
-                </Grid>
-              </Grid>
-            </Grid>
-
-            <Grid
-              item
-              xs={12}
-              sm={12}
-              md={6}
-              lg={6}
-              className={classes.rightContainer}
-            >
-              <Grid
-                container
-                item
-                sm={12}
-                xs={11}
-                className={classes.textAndButtons}
-              >
-                <Grid
-                  item
-                  sm={11}
-                  xs={12}
-                  className={classes.subContainerThree}
-                >
-                  <Typography
-                    variant="h4"
-                    component="h2"
-                    className={classes.header}
-                  >
-                    Community and Social bond
-                  </Typography>
-                  <p className={classes.paragraph}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-                  </p>
-
-                  <Button variant="contained" className={classes.button}>
-                    something
-                  </Button>
-                  <Button variant="contained" className={classes.button}>
-                    something asas
-                  </Button>
-                  <Button variant="contained" className={classes.button}>
-                    asas
-                  </Button>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
           <Grid item sm={12} xs={12} className={classes.emptySpace} />
         </Grid>
       </Grid>
@@ -572,6 +456,7 @@ const styles = (theme) => ({
   },
   multipleSectionsContainer: {
     margin: "50px 50px -13px 50px",
+    // backgroundColor: 'red',
     [theme.breakpoints.down(960)]: {
       margin: "30px auto -30px auto",
     },
@@ -582,17 +467,38 @@ const styles = (theme) => ({
     [theme.breakpoints.down(376)]: {
       margin: "50px 5px -50px 5px",
     },
+    [theme.breakpoints.down(415)]: {
+      marginTop: 30,
+      // marginTop: 50,
+    },
   },
 
   subContainerOne: {
     margin: "auto",
     padding: 10,
     [theme.breakpoints.down(960)]: {
-      marginBottom: 40,
+      marginBottom: 35,
+    },
+    [theme.breakpoints.down(376)]: {
+      marginBottom: 25,
     },
   },
   textAndButtons: {
-    margin: "auto",
+    margin: "auto auto -5px auto",
+  },
+  leftContainer: {
+    [theme.breakpoints.down(769)]: {
+      marginBottom: -23,
+    },
+    [theme.breakpoints.down(415)]: {
+      marginBottom: 0,
+    },
+    [theme.breakpoints.down(361)]: {
+      marginBottom: 0,
+    },
+    [theme.breakpoints.down(281)]: {
+      marginBottom: 0,
+    },
   },
 
   subContainerTwo: {
@@ -601,9 +507,6 @@ const styles = (theme) => ({
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.color.white,
     fontFamily: theme.palette.font.HelveticaNeue,
-    [theme.breakpoints.down(960)]: {
-      marginBottom: 40,
-    },
   },
   subContainerThree: {
     margin: "auto",
@@ -611,7 +514,6 @@ const styles = (theme) => ({
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.color.white,
     fontFamily: theme.palette.font.HelveticaNeue,
-    // height: 210,
     [theme.breakpoints.down(960)]: {
       marginBottom: 40,
     },
@@ -672,10 +574,20 @@ const styles = (theme) => ({
     paddingRight: 20,
     paddingBottom: 20,
   },
+  emptySpace1: {
+    display: "none",
+    [theme.breakpoints.down(960)]: {
+      display: "block",
+      height: 20,
+    },
+  },
   emptySpace: {
-    height: 75,
+    height: 40,
     [theme.breakpoints.down(960)]: {
       height: 30,
+    },
+    [theme.breakpoints.down(415)]: {
+      height: 50,
     },
   },
   button: {
@@ -830,6 +742,11 @@ const styles = (theme) => ({
       marginLeft: 10,
       marginRight: 10,
     },
+  },
+  diversityImage: {
+     width: "100%",
+    height:  330,
+    backgroundColor: "grey",
   },
 
   boardMemberWrapper: {

@@ -19,7 +19,7 @@ import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 
 //Static Images
-import profile from "../../images/profile.png";
+import profile from "../../../images/profile.png";
 
 const BoardMember = ({ classes }) => {
 
