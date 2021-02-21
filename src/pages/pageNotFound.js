@@ -41,6 +41,24 @@ const styles = (theme) => ({
   },
   Page404Container: {
     margin: "auto",
+    [theme.breakpoints.down(1522)]: {
+      margin: "80px  auto 80px auto",
+    },
+    [theme.breakpoints.down(1121)]: {
+      margin: "85px  auto 85px auto",
+    },
+    [theme.breakpoints.down(1094)]: {
+      margin: "90px  auto 90px auto",
+    },
+    [theme.breakpoints.down(1067)]: {
+      margin: "100px  auto 100px auto",
+    },
+    [theme.breakpoints.down(850)]: {
+      margin: "120px  auto 120px auto",
+    },
+    [theme.breakpoints.down(600)]: {
+      margin: "auto",
+    },
   },
   error404: {
     backgroundColor: theme.palette.primary.main,
@@ -68,6 +86,9 @@ const styles = (theme) => ({
   },
   error404TextYellow: {
     color: theme.palette.color.yellow,
+    [theme.breakpoints.down(415)]: {
+      fontSize: 16
+    },
   },
   logo: {
     width: "100%",
