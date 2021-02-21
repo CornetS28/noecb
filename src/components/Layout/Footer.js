@@ -25,6 +25,9 @@ const Footer = (props) => {
     <>
       <Divider className={classes.divider} />
       <Grid container spacing={10} className={classes.footerWrapper}>
+        <Grid item sm={12} xs={12}>
+          <Divider className={classes.divider} style={{marginTop: -4.5}}/>
+        </Grid>
         <Grid item sm={1} xs={12} />
         <Grid container item sm={10} className={classes.footerContainer}>
           <Grid
@@ -133,7 +136,7 @@ const Footer = (props) => {
           <Grid container className={classes.footerWrapperBottom}>
             <Grid item sm={1} xs={12} />
             <Grid container item sm={10} className={classes.footerContainer2}>
-              <Grid container item sm={9} xm={12} >
+              <Grid container item sm={9} xm={12}>
                 <Grid item sm={6} xs={12}>
                   <div className={classes.footerBottomLeft1}>
                     <p>© 2021 NOECB. All right reserved.</p>
@@ -202,7 +205,7 @@ const styles = (theme) => ({
     },
   },
   divider: {
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.color.darkWhite,
   },
   gridWrapperTwo: {
     color: theme.palette.secondary.main,
@@ -311,7 +314,6 @@ const styles = (theme) => ({
     },
   },
   footerBottomLeft1: {
-    // color: theme.palette.color.gray,
     fontFamily: theme.palette.font.HelveticaNeue,
     fontSize: 15,
     height: 20,
@@ -354,7 +356,7 @@ const styles = (theme) => ({
     backgroundColor: theme.palette.primary.main,
     height: "100%",
     marginBottom: 13,
-  // margin: 'auto'
+    // margin: 'auto'
   },
   footerBottomTextLeft: {
     backgroundColor: theme.palette.primary.main,
