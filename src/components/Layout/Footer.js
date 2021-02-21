@@ -4,7 +4,9 @@ import { useHistory } from "react-router-dom";
 
 // Images
 import logo from "../../images/logo.png";
-import footerLogo from "../../images/logo.png";
+import helpingHand from "../../images/helping-hand1.svg";
+import together from "../../images/together.svg";
+import bible from "../../images/bible.svg";
 
 // MUI stuff
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -41,11 +43,23 @@ const Footer = (props) => {
                 </p>
               </div>
               <div edge="start" className={classes.logoWrapper}>
-                <img
-                  src={footerLogo}
-                  alt="footerLogo"
-                  className={classes.footerLogo}
-                />
+                <Grid item xs={12} sm={10} className={classes.logoGroup}>
+                  <img
+                    src={helpingHand}
+                    alt="footerLogo"
+                    className={classes.footerLogo}
+                  />
+                  <img
+                    src={bible}
+                    alt="footerLogo"
+                    className={classes.footerLogo}
+                  />
+                  <img
+                    src={together}
+                    alt="footerLogo"
+                    className={classes.footerLogo}
+                  />
+                </Grid>
               </div>
             </Grid>
           </Grid>
@@ -88,7 +102,6 @@ const Footer = (props) => {
               >
                 <p className="colorYellow">Become an Member</p>
               </div>
-             
             </Grid>
             <Grid container item sm={8} className={classes.p}>
               <Grid item sm={12} xs={12} className={classes.secondParaRight}>
@@ -117,48 +130,52 @@ const Footer = (props) => {
         <Grid item sm={1} xs={12} />
         <Grid item sm={12} xs={12}>
           <Divider className={classes.divider} />
-        </Grid>
+          <Grid container className={classes.footerWrapperBottom}>
+            <Grid item sm={1} xs={12} />
+            <Grid container item sm={10} className={classes.footerContainer2}>
+              <Grid container item sm={9} xm={12} >
+                <Grid item sm={6} xs={12}>
+                  <div className={classes.footerBottomLeft1}>
+                    <p>© 2021 NOECB. All right reserved.</p>
+                  </div>
+                </Grid>
+                <Grid item sm={3} xs={12}>
+                  <div className={classes.footerBottomLeft2}>
+                    <p>
+                      <a href="/privacypolicy" className={classes.footerLink}>
+                        Privacy Policy
+                      </a>
+                    </p>
+                  </div>
+                </Grid>
 
-        <Grid container className={classes.footerWrapperBottom}>
-          <Grid item sm={1} xs={12} />
-          <Grid container item sm={10} className={classes.footerContainer2}>
-            <Grid container item sm={9} xm={12}>
-              <Grid item sm={6} xs={12}>
-                <div className={classes.footerBottomLeft1}>
-                  <p>© 2021 NOECB. All right reserved.</p>
-                </div>
+                <Grid item sm={3} xs={12}>
+                  <div className={classes.footerBottomLeft3}>
+                    <p>
+                      <a href="/privacypolicy" className={classes.footerLink}>
+                        Terms of Service
+                      </a>
+                    </p>
+                  </div>
+                </Grid>
               </Grid>
-              <Grid item sm={3} xs={12}>
-                <div className={classes.footerBottomLeft2}>
-                  <p>
-                    <a href="/privacypolicy" className={classes.footerLink}>
-                      Privacy Policy
-                    </a>
-                  </p>
-                </div>
-              </Grid>
-
-              <Grid item sm={3} xs={12}>
-                <div className={classes.footerBottomLeft3}>
-                  <p>
-                    <a href="/privacypolicy" className={classes.footerLink}>
-                      Terms of Service
-                    </a>
-                  </p>
-                </div>
+              <Grid container item sm={3} xm={12} style={{ marginBottom: -20 }}>
+                <Grid item sm={2} xs={12} />
+                <Grid item sm={4} xs={12} />
+                <Grid
+                  item
+                  sm={6}
+                  xs={12}
+                  className={classes.footerBottomLeft4PP}
+                >
+                  <div>
+                    <p className={classes.footerBottomLeft4}>Made in Haiti</p>
+                  </div>
+                </Grid>
               </Grid>
             </Grid>
-            <Grid container item sm={3} xm={12} style={{ marginBottom: -20 }}>
-              <Grid item sm={2} xs={12} />
-              <Grid item sm={4} xs={12} />
-              <Grid item sm={6} xs={12} className={classes.footerBottomLeft4PP}>
-                <div>
-                  <p className={classes.footerBottomLeft4}>Made in Atlanta</p>
-                </div>
-              </Grid>
-            </Grid>
+            <Grid item sm={1} xs={12} />
           </Grid>
-          <Grid item sm={1} xs={12} />
         </Grid>
       </Grid>
     </>
@@ -226,7 +243,7 @@ const styles = (theme) => ({
   secondParaRight: {
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.secondary.main,
-    fontFamily: theme.palette.font.fontFamily,
+    fontFamily: theme.palette.font.HelveticaNeue,
     textAlign: "right",
     lineHeight: 0.5,
     paddingRight: 10,
@@ -234,7 +251,7 @@ const styles = (theme) => ({
   secondParaRightContent: {
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.secondary.main,
-    fontFamily: theme.palette.font.fontFamily,
+    fontFamily: theme.palette.font.HelveticaNeue,
     width: "70%",
     paddingRight: 20,
     float: "right",
@@ -252,12 +269,11 @@ const styles = (theme) => ({
     width: 160,
     margin: "auto",
     color: theme.palette.color.gray,
-    fontFamily: theme.palette.font.fontFamily,
+    fontFamily: theme.palette.font.HelveticaNeue,
     paddingRight: 15,
     cursor: "pointer",
     "&:hover": {
       backgroundColor: theme.palette.color.red,
-      color: theme.palette.color.yellow,
     },
     ["@media (max-width: 1271px)"]: {
       fontSize: 14,
@@ -270,6 +286,7 @@ const styles = (theme) => ({
       textAlign: "center",
     },
   },
+
   logo: {
     width: "170px",
     height: "140px",
@@ -278,25 +295,24 @@ const styles = (theme) => ({
       marginRight: "15%",
     },
   },
+  logoGroup: {
+    marginLeft: 15,
+    display: "flex",
+    justifyContent: "space-between",
+    [theme.breakpoints.down(600)]: {
+      marginRight: 15,
+    },
+  },
   footerLogo: {
     paddingLeft: 10,
-    width: "280px",
-    ["@media (max-width: 1155px)"]: {
-      width: "180px",
-      margin: "auto",
-    },
-    ["@media (max-width: 599px)"]: {
-      fontSize: 14,
-      marginLeft: 210,
-    },
-    ["@media (max-width: 459px)"]: {
-      fontSize: 14,
-      marginLeft: 90,
+    width: "60px",
+    [theme.breakpoints.down(415)]: {
+      width: "40px",
     },
   },
   footerBottomLeft1: {
-    color: theme.palette.color.gray,
-    fontFamily: theme.palette.font.fontFamily,
+    // color: theme.palette.color.gray,
+    fontFamily: theme.palette.font.HelveticaNeue,
     fontSize: 15,
     height: 20,
     backgroundColor: theme.palette.primary.main,
@@ -338,6 +354,7 @@ const styles = (theme) => ({
     backgroundColor: theme.palette.primary.main,
     height: "100%",
     marginBottom: 13,
+  // margin: 'auto'
   },
   footerBottomTextLeft: {
     backgroundColor: theme.palette.primary.main,

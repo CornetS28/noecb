@@ -68,10 +68,11 @@ a {
 
 .colorYellow {
   color: #fdb51d;
+  font-family: "Helvetica Neue";
 }
 
 .colorYellow:hover {
-  color: #1f3c92;
+  color: #ffffff;
 }
 
 .care-an-support-desc {
