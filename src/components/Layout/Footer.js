@@ -26,7 +26,7 @@ const Footer = (props) => {
       <Divider className={classes.divider} />
       <Grid container spacing={10} className={classes.footerWrapper}>
         <Grid item sm={12} xs={12}>
-          <Divider className={classes.divider} style={{marginTop: -4.5}}/>
+          <Divider className={classes.divider} style={{ marginTop: -4.5 }} />
         </Grid>
         <Grid item sm={1} xs={12} />
         <Grid container item sm={10} className={classes.footerContainer}>
@@ -73,7 +73,7 @@ const Footer = (props) => {
             xs={12}
             className={classes.footerWrapperRight}
           >
-            <Grid item sm={3} xs={12} className={classes.firstParaRight}>
+            <Grid item sm={4} xs={12} className={classes.firstParaRight}>
               <div
                 className={classes.paraTwo}
                 onClick={() => routeChange("/resources")}
@@ -122,7 +122,7 @@ const Footer = (props) => {
               </Grid>
 
               <Grid item sm={12} xs={12} className={classes.secondParaRight}>
-                <div edge="start" className={classes.logoWrapper}>
+                <div edge="start" className={classes.logoWebWrapper}>
                   <img src={logo} alt="logo" className={classes.logo} />
                 </div>
               </Grid>
@@ -189,9 +189,12 @@ const styles = (theme) => ({
   ...theme.palette.primary,
   ...theme.palette.main,
   footerLink: {
-    color: theme.palette.color.black,
+    color: theme.palette.color.white,
     fontFamily: theme.palette.font.HelveticaNeue,
     fontSize: 15,
+    "&:hover": {
+      color: theme.palette.color.darkBlue,
+    },
   },
   footerPara: {
     fontSize: 22,
@@ -224,15 +227,32 @@ const styles = (theme) => ({
   },
 
   footerContainer: {
-    marginTop: 20,
+    marginTop: -80,
+    marginBottom: -60,
+    [theme.breakpoints.down(1131)]: {
+      marginBottom: -60,
+    },
+    [theme.breakpoints.down(880)]: {
+      marginBottom: -140,
+    },
+    [theme.breakpoints.down(600)]: {
+      marginTop: -120,
+      marginBottom: -140,
+    },
   },
   footerWrapperLeft: {
     color: theme.palette.secondary.main,
     backgroundColor: theme.palette.primary.main,
     fontFamily: theme.palette.font.fontFamily,
+    [theme.breakpoints.down(600)]: {
+      marginTop: -40,
+    },
   },
   footerWrapperRight: {
     color: theme.palette.secondary.main,
+    [theme.breakpoints.down(600)]: {
+      marginBottom: -20,
+    },
   },
   firstParaRight: {
     backgroundColor: theme.palette.primary.main,
@@ -241,7 +261,6 @@ const styles = (theme) => ({
     textAlign: "right",
     lineHeight: 1.71,
     paddingRight: 10,
-    ["@media (max-width: 1271px)"]: {},
   },
   secondParaRight: {
     backgroundColor: theme.palette.primary.main,
@@ -283,9 +302,15 @@ const styles = (theme) => ({
       width: "100%",
       paddingRight: 5,
     },
-    ["@media (max-width: 599px)"]: {
+    [theme.breakpoints.down(600)]: {
       fontSize: 14,
       width: "50%",
+      textAlign: "center",
+    },
+  },
+
+  logoWebWrapper: {
+    [theme.breakpoints.down(600)]: {
       textAlign: "center",
     },
   },
@@ -293,9 +318,16 @@ const styles = (theme) => ({
   logo: {
     width: "170px",
     height: "140px",
-    ["@media (max-width: 599px)"]: {
-      width: "70%",
-      marginRight: "15%",
+
+    [theme.breakpoints.down(600)]: {
+      width: "40%",
+      height: "200px",
+      display: "inline-block",
+      margin: "0 auto",
+      padding: "auto",
+    },
+    [theme.breakpoints.down(600)]: {
+      height: "140px",
     },
   },
   logoGroup: {
@@ -317,46 +349,42 @@ const styles = (theme) => ({
     fontFamily: theme.palette.font.HelveticaNeue,
     fontSize: 15,
     height: 20,
-    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.color.white,
     ["@media (max-width: 1541px)"]: {
       fontSize: 14,
     },
-    ["@media (max-width: 459px)"]: {
-      fontSize: 14,
-      paddingLeft: 45,
+    [theme.breakpoints.down(600)]: {
+      textAlign: "center",
     },
   },
   footerBottomLeft2: {
-    color: theme.palette.color.gray,
+    color: theme.palette.color.white,
     height: 20,
     backgroundColor: theme.palette.primary.main,
     fontFamily: theme.palette.font.fontFamily,
     ["@media (max-width: 1541px)"]: {
       fontSize: 14,
     },
-    ["@media (max-width: 459px)"]: {
-      fontSize: 14,
-      paddingLeft: 145,
+    [theme.breakpoints.down(600)]: {
+      textAlign: "center",
     },
   },
   footerBottomLeft3: {
-    color: theme.palette.color.gray,
+    color: theme.palette.color.white,
     height: 20,
     backgroundColor: theme.palette.primary.main,
     fontFamily: theme.palette.font.fontFamily,
     ["@media (max-width: 1541px)"]: {
       fontSize: 14,
     },
-    ["@media (max-width: 459px)"]: {
-      fontSize: 14,
-      paddingLeft: 135,
+    [theme.breakpoints.down(600)]: {
+      textAlign: "center",
     },
   },
   footerContainer2: {
     backgroundColor: theme.palette.primary.main,
     height: "100%",
     marginBottom: 13,
-    // margin: 'auto'
   },
   footerBottomTextLeft: {
     backgroundColor: theme.palette.primary.main,
@@ -366,7 +394,7 @@ const styles = (theme) => ({
     height: 20,
   },
   footerBottomLeft4: {
-    color: theme.palette.color.gray,
+    color: theme.palette.color.white,
     backgroundColor: theme.palette.primary.main,
     fontFamily: theme.palette.font.fontFamily,
     fontSize: 15,
@@ -380,10 +408,8 @@ const styles = (theme) => ({
       width: "100%",
       marginBottom: 20,
     },
-    ["@media (max-width: 459px)"]: {
-      fontSize: 14,
-      paddingLeft: 135,
-      paddingBottom: 30,
+    [theme.breakpoints.down(600)]: {
+      textAlign: "center",
     },
   },
   footerWrapperBottom: {
@@ -396,10 +422,13 @@ const styles = (theme) => ({
     width: "70%",
     paddingRight: 20,
     float: "right",
+    "&:hover": {
+      color: theme.palette.color.yellow,
+    },
     ["@media (max-width: 660px)"]: {
       marginRight: 5,
     },
-    ["@media (max-width: 599px)"]: {
+    ["@media (max-width: 600px)"]: {
       fontSize: 14,
       width: "95%",
       textAlign: "center",
