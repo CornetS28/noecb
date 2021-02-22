@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 // MUI Stuff
 import Grid from "@material-ui/core/Grid";
@@ -17,15 +18,13 @@ import Purpose from "../components/LandingPageComponents/Purpose";
 
 import DB from '../utils/dbSchema'
 
-// console.log("Data:", db.diversity[0].title);
-
 const LandingPage = (props) => {
   const { classes } = props;
   return (
     <Grid container className={classes.landingPageWrapper}>
       <Grid container>
         <Grid item sm />
-        <Grid item sm={12} xm={12}>
+        <Grid item sm={12} xs={12}>
           <img
             src={LandingImage}
             alt="portrait"
@@ -265,7 +264,7 @@ const styles = (theme) => ({
     lineHeight: 1.5,
     textAlign: "center",
     backgroundColor: theme.palette.color.white,
-    fontFamily: theme.palette.font.BebasNeueBold,
+    fontFamily: theme.palette.font.HelveticaNeue,
   },
   membersCountText: {
     textTransform: "uppercase",
@@ -400,21 +399,6 @@ const styles = (theme) => ({
       height: 50,
     },
   },
-  // button: {
-  //   textTransform: "uppercase",
-  //   color: theme.palette.color.white,
-  //   backgroundColor: theme.palette.color.darkBlue,
-  //   fontFamily: theme.palette.font.HelveticaNeue,
-  //   borderRadius: 0,
-  //   marginBottom: 0,
-  //   marginTop: 10,
-  //   marginRight: 10,
-  //   lineHeight: 2,
-  //   "&:hover": {
-  //     backgroundColor: theme.palette.color.yellow,
-  //     color: theme.palette.color.darkBlue,
-  //   },
-  // },
 
   buttonYellow: {
     backgroundColor: theme.palette.color.yellow,
@@ -540,4 +524,8 @@ const styles = (theme) => ({
     backgroundColor: theme.palette.color.darkWhite,
   },
 });
+
+LandingPage.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 export default withStyles(styles)(LandingPage);
