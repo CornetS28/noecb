@@ -1,13 +1,11 @@
-
 html,
 body {
-  font-family: "Helvetica Neue", 'BebasNeue Bold';
+  font-family: "Helvetica Neue", "BebasNeue Bold";
 }
-.container {
+.page-container {
   margin: 85px -8px -8px -8px;
-  overflow-x: hidden;
   overflow-y: hidden;
-  background-color: #f7f7ef;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -124,12 +122,11 @@ a {
   visibility: visible;
 }
 
-
 .footer-nav {
-  color: #AB0B22
+  color: #ab0b22;
 }
 .footer-nav:hover {
-  color: #AB0B22;
+  color: #ab0b22;
 }
 .colorOrange:hover {
   color: #ffffff;

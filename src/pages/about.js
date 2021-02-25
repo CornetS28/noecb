@@ -6,8 +6,13 @@ import Grid from "@material-ui/core/Grid";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Divider from "@material-ui/core/Divider";
 
+
+// Components
+import ContactUs from '../components/ContactUs/ContactUs';
+
 // Images
 import LandingImage from "../images/mainHomeImage.png";
+
 
 
 const About = ({classes}) => {
@@ -15,7 +20,7 @@ const About = ({classes}) => {
     <Grid
       container
       className={classes.aboutPageWrapper}
-      style={{ backgroundColor: "red" }}
+    
     >
       <Grid container>
         <Grid item sm />
@@ -27,8 +32,7 @@ const About = ({classes}) => {
           />
         </Grid>
 
-
-          <Grid
+        <Grid
           container
           item
           sm={12}
@@ -46,14 +50,16 @@ const About = ({classes}) => {
               }}
             >
               <h1 className={classes.displayHeadlineOnImage}>
-                Church Of Bible understanding bsdfdv  saf kdfvdkf fdvd v fkvfdkvdvfdkv
+                Church Of Bible understanding bsdfdv saf kdfvdkf fdvd v
+                fkvfdkvdvfdkv
               </h1>
-
             </Grid>
           </Grid>
         </Grid>
         <Grid item sm />
       </Grid>
+      {/*--- Contact us form section----*/}
+      <ContactUs />
     </Grid>
   );
 }

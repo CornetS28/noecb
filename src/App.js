@@ -35,27 +35,23 @@ const theme = createMuiTheme(themeObjectContent);
 const App = () => {
   return (
     <MuiThemeProvider theme={theme}>
-      <div>
-        <Router>
-          <Navbar />
-          <div className="container">
-            <Switch>
-              <Route exact path="/" component={home} />
-              <Route exact path="/become-a-member" component={Signup} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/social" component={memeGenerator} />
-              <Route exact path="/about" component={about} />
-              <Route exact path="/chat" component={chat} />
-
-              <Route exact path="/resources" component={resources} />
-
-              <Route exact path="/privacypolicy" component={privacyPolicy} />
-              <Route component={PageNotFound} />
-            </Switch>
-            <Footer />
-          </div>
-        </Router>
-      </div>
+      <Router>
+        <Navbar />
+        <div className="page-container">
+          <Switch>
+            <Route exact path="/" component={home} />
+            <Route exact path="/become-a-member" component={Signup} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/social" component={memeGenerator} />
+            <Route exact path="/about" component={about} />
+            <Route exact path="/chat" component={chat} />
+            <Route exact path="/resources" component={resources} />
+            <Route exact path="/privacypolicy" component={privacyPolicy} />
+            <Route component={PageNotFound} />
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
     </MuiThemeProvider>
   );
 };
