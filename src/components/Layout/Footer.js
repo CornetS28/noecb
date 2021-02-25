@@ -23,11 +23,17 @@ const Footer = (props) => {
 
   return (
     <>
-      <Divider className={classes.divider} />
+      <Grid item sm={12} xs={12}>
+        <Divider
+          className={classes.divider}
+          style={{
+            position: "absolute",
+            width: "105%",
+            margin: "-41px auto auto -20px",
+          }}
+        />
+      </Grid>
       <Grid container spacing={10} className={classes.footerWrapper}>
-        <Grid item sm={12} xs={12}>
-          <Divider className={classes.divider} style={{ marginTop: -4.5 }} />
-        </Grid>
         <Grid item sm={1} xs={12} />
         <Grid container item sm={10} className={classes.footerContainer}>
           <Grid
@@ -227,32 +233,15 @@ const styles = (theme) => ({
   },
 
   footerContainer: {
-    marginTop: -80,
-    marginBottom: -60,
-    [theme.breakpoints.down(1131)]: {
-      marginBottom: -60,
-    },
-    [theme.breakpoints.down(880)]: {
-      marginBottom: -140,
-    },
-    [theme.breakpoints.down(600)]: {
-      marginTop: -120,
-      marginBottom: -140,
-    },
+    marginTop: 20,
   },
   footerWrapperLeft: {
     color: theme.palette.secondary.main,
     backgroundColor: theme.palette.primary.main,
     fontFamily: theme.palette.font.fontFamily,
-    [theme.breakpoints.down(600)]: {
-      marginTop: -40,
-    },
   },
   footerWrapperRight: {
     color: theme.palette.secondary.main,
-    [theme.breakpoints.down(600)]: {
-      marginBottom: -20,
-    },
   },
   firstParaRight: {
     backgroundColor: theme.palette.primary.main,
@@ -434,7 +423,7 @@ const styles = (theme) => ({
       textAlign: "center",
       marginBottom: 20,
     },
-    ["@media (max-width: 5375px)"]: {
+    ["@media (max-width: 375px)"]: {
       width: "95%",
     },
   },
