@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
 
 // MUI Stuff
@@ -6,22 +6,18 @@ import Grid from "@material-ui/core/Grid";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Divider from "@material-ui/core/Divider";
 
-
 // Components
-import ContactUs from '../components/ContactUs/ContactUs';
+import ContactUs from "../components/ContactUs/ContactUs";
+import CommunityHistory from "../components/AboutComponents/Community";
 
 // Images
 import LandingImage from "../images/mainHomeImage.png";
 
+import DB from "../utils/dbSchema";
 
-
-const About = ({classes}) => {
+const About = ({ classes }) => {
   return (
-    <Grid
-      container
-      className={classes.aboutPageWrapper}
-    
-    >
+    <Grid container className={classes.aboutPageWrapper}>
       <Grid container>
         <Grid item sm />
         <Grid item sm={12} xs={12}>
@@ -58,13 +54,40 @@ const About = ({classes}) => {
         </Grid>
         <Grid item sm />
       </Grid>
+
+      {/* Community stuff */}
+      <Grid
+        container
+        spacing={4}
+        item
+        sm={8}
+        xs={11}
+        className={classes.subSection}
+      >
+        {DB.communityFocuses.map((community, index) => (
+          <Grid item sm={4} xs={12} className={classes.cardWrapper} key={index}>
+            <CommunityHistory
+              image={community.image}
+              title={community.title}
+              briefDescription={community.briefDescription}
+              totalDescription={community.totalDescription}
+            />
+          </Grid>
+        ))}
+        <Grid sm={12} xs={12}>
+          <Divider className={classes.divider2} />
+        </Grid>
+      </Grid>
       {/*--- Contact us form section----*/}
       <ContactUs />
     </Grid>
   );
-}
+};
 
 const styles = (theme) => ({
+  aboutPageWrapper: {
+    backgroundColor: theme.palette.secondary.main,
+  },
   imgContainer: {
     width: "100%",
     position: "relative",
@@ -78,87 +101,7 @@ const styles = (theme) => ({
     // filter:' grayscale(60%)',
     filter: "brightness(0.5)",
   },
-  image: {
-    position: "aboslute",
-    width: "100%",
-    height: "780px",
-    objectFit: "contain",
-    backgroundSize: "contain",
 
-    ["@media (max-width: 1679px)"]: {
-      height: "680px",
-    },
-    ["@media (max-width: 1605px)"]: {
-      height: "675px",
-    },
-    ["@media (max-width: 1470px)"]: {
-      height: "575px",
-    },
-    ["@media (max-width: 1453px)"]: {
-      height: "580px",
-    },
-    ["@media (max-width: 1358px)"]: {
-      height: "530px",
-    },
-    ["@media (max-width: 1246px)"]: {
-      height: "500px",
-    },
-    ["@media (max-width: 1190px)"]: {
-      height: "490px",
-    },
-    ["@media (max-width: 1158px)"]: {
-      height: "420px",
-    },
-    ["@media (max-width: 979px)"]: {
-      height: "400px",
-    },
-    ["@media (max-width: 932px)"]: {
-      height: "380px",
-    },
-    ["@media (max-width: 878px)"]: {
-      height: "340px",
-    },
-
-    ["@media (max-width: 773px)"]: {
-      height: "300px",
-    },
-    ["@media (max-width: 698px)"]: {
-      height: "250px",
-    },
-    ["@media (max-width: 599px)"]: {
-      width: "37em",
-      height: "250px",
-    },
-    ["@media (max-width: 575px)"]: {
-      width: "35em",
-      height: "240px",
-    },
-    ["@media (max-width: 555px)"]: {
-      width: "35em",
-      height: "220px",
-    },
-    ["@media (max-width: 526px)"]: {
-      width: "34em",
-      height: "200px",
-    },
-    ["@media (max-width: 508px)"]: {
-      width: "32em",
-      height: "200px",
-    },
-    ["@media (max-width: 508px)"]: {
-      width: "30em",
-      height: "200px",
-    },
-    ["@media (max-width: 443px)"]: {
-      width: "27em",
-      height: "200px",
-    },
-
-    ["@media (max-width: 375px)"]: {
-      width: "24em",
-      height: "160px",
-    },
-  },
   textOnImageWrapper: {
     position: "absolute",
     top: "27%",
@@ -245,6 +188,17 @@ const styles = (theme) => ({
     [theme.breakpoints.down(436)]: {
       fontSize: "10px",
     },
+  },
+
+  subSection: {
+    margin: "50px auto 50px auto",
+  },
+
+  arrowForward: {
+    marginBottom: -2,
+  },
+  contentWrappper: {
+    height: 200,
   },
 });
 
