@@ -14,7 +14,7 @@ const Contact = (props) => {
     <Grid container sm={12} xs={12} className={classes.contactUsWrapper}>
       <Grid
         container
-        sm={10}
+        sm={8}
         xs={12}
         spacing={6}
         className={classes.contactUsContainer}
