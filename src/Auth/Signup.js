@@ -65,12 +65,12 @@ const SignUp = (props) => {
 
   const handleSignup = async (data) => {
     console.log("Signup data:", data);
-    try {
-      // window.location.href = "/success";
-      reset(defaultValues);
-    } catch (e) {
-      console.log(e);
-    }
+    // try {
+    //   // window.location.href = "/success";
+    //   reset(defaultValues);
+    // } catch (e) {
+    //   console.log(e);
+    // }
   };
 
   const { classes } = props;
