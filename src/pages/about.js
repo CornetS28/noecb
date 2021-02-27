@@ -166,6 +166,7 @@ const styles = (theme) => ({
     margin: "auto",
     width: "95%",
     paddingLeft: 10,
+    backgroundColor: "red",
     [theme.breakpoints.down(1470)]: {
       top: "27%",
     },
@@ -204,6 +205,7 @@ const styles = (theme) => ({
     },
     [theme.breakpoints.down(421)]: {
       top: "18%",
+      width: "85%",
     },
 
     [theme.breakpoints.down(376)]: {
