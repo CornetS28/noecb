@@ -198,7 +198,7 @@ const styles = (theme) => ({
     width: "90%",
     color: theme.palette.color.white,
     fontFamily: theme.palette.font.fontFamily,
-    ["@media (max-width: 1155px)"]: {
+    [theme.breakpoints.down(1155)]: {
       fontSize: 18,
     },
   },
@@ -252,7 +252,6 @@ const styles = (theme) => ({
     textAlign: "right",
     lineHeight: 1.71,
     paddingRight: 10,
-    ["@media (max-width: 1271px)"]: {},
   },
   secondParaRight: {
     backgroundColor: theme.palette.primary.main,
@@ -269,11 +268,11 @@ const styles = (theme) => ({
     width: "70%",
     paddingRight: 20,
     float: "right",
-    ["@media (max-width: 675px)"]: {
+    [theme.breakpoints.down(675)]: {
       width: 200,
     },
 
-    ["@media (max-width: 599px)"]: {
+    [theme.breakpoints.down(600)]: {
       fontSize: 14,
       width: "95%",
       textAlign: "center",
@@ -289,7 +288,7 @@ const styles = (theme) => ({
     "&:hover": {
       backgroundColor: theme.palette.color.red,
     },
-    ["@media (max-width: 1271px)"]: {
+    [theme.breakpoints.down(1271)]: {
       fontSize: 14,
       width: "100%",
       paddingRight: 5,
@@ -326,7 +325,7 @@ const styles = (theme) => ({
     fontSize: 15,
     height: 20,
     color: theme.palette.color.white,
-    ["@media (max-width: 1541px)"]: {
+    [theme.breakpoints.down(1541)]: {
       fontSize: 14,
     },
     [theme.breakpoints.down(600)]: {
@@ -338,7 +337,7 @@ const styles = (theme) => ({
     height: 20,
     backgroundColor: theme.palette.primary.main,
     fontFamily: theme.palette.font.fontFamily,
-    ["@media (max-width: 1541px)"]: {
+    [theme.breakpoints.down(1541)]: {
       fontSize: 14,
     },
     [theme.breakpoints.down(600)]: {
@@ -350,7 +349,7 @@ const styles = (theme) => ({
     height: 20,
     backgroundColor: theme.palette.primary.main,
     fontFamily: theme.palette.font.fontFamily,
-    ["@media (max-width: 1541px)"]: {
+    [theme.breakpoints.down(1541)]: {
       fontSize: 14,
     },
     [theme.breakpoints.down(600)]: {
@@ -383,11 +382,11 @@ const styles = (theme) => ({
     fontFamily: theme.palette.font.fontFamily,
     fontSize: 15,
     height: 20,
-    ["@media (max-width: 1079px)"]: {
+    [theme.breakpoints.down(1079)]: {
       fontSize: 14,
       width: "130%",
     },
-    ["@media (max-width: 1541px)"]: {
+    [theme.breakpoints.down(1541)]: {
       fontSize: 14,
       width: "100%",
       marginBottom: 20,
@@ -409,16 +408,16 @@ const styles = (theme) => ({
     "&:hover": {
       color: theme.palette.color.yellow,
     },
-    ["@media (max-width: 660px)"]: {
+    [theme.breakpoints.down(660)]: {
       marginRight: 5,
     },
-    ["@media (max-width: 600px)"]: {
+    [theme.breakpoints.down(600)]: {
       fontSize: 14,
       width: "95%",
       textAlign: "center",
       marginBottom: 20,
     },
-    ["@media (max-width: 375px)"]: {
+    [theme.breakpoints.down(376)]: {
       width: "95%",
     },
   },
