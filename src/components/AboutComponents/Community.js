@@ -11,7 +11,6 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 
 // Images
-import CommunityImg from "../../images/footballfemme.jpg";
 
 const Community = (props) => {
    const {
@@ -19,6 +18,7 @@ const Community = (props) => {
     image, 
     title, 
     briefDescription, 
+ 
    } = props;
   return (
     <Card className={classes.card}>
@@ -55,7 +55,6 @@ Community.propTypes = {
 const styles = (theme) => ({
   card: {
     backgroundColor: theme.palette.color.yellow,
-
     width: "100%",
   },
   cardMedia: {
@@ -116,18 +115,15 @@ const styles = (theme) => ({
     },
     [theme.breakpoints.down(700)]: {
       height: "80px",
-      // width: "92%",
     },
     [theme.breakpoints.down(676)]: {
       height: "77px",
     },
     [theme.breakpoints.down(664)]: {
-      // width: "90%",
       height: "71px",
     },
     [theme.breakpoints.down(600)]: {
       height: "275px",
-      // width: "99%",
     },
     [theme.breakpoints.down(552)]: {
       height: "260px",

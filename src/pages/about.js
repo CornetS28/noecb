@@ -5,10 +5,15 @@ import PropTypes from "prop-types";
 import Grid from "@material-ui/core/Grid";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Divider from "@material-ui/core/Divider";
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+
 
 // Components
 import ContactUs from "../components/ContactUs/ContactUs";
 import CommunityHistory from "../components/AboutComponents/Community";
+import CommunityFullDetails from "../components/AboutComponents/CommunityFullDetails";
 
 // Images
 import LandingImage from "../images/mainHomeImage.png";
@@ -16,6 +21,19 @@ import LandingImage from "../images/mainHomeImage.png";
 import DB from "../utils/dbSchema";
 
 const About = ({ classes }) => {
+    const [open, setOpen] = React.useState(false);
+    const [item, setItem] = React.useState("");
+
+     const handleOpen = (id) => {
+       const communityItem = DB.communityFocuses.find((item) => item.comId === id);
+       setOpen(true);
+       setItem(communityItem);
+     };
+
+      const handleClose = () => {
+        setOpen(false);
+      };
+
   return (
     <Grid container className={classes.aboutPageWrapper}>
       <Grid container>
@@ -65,7 +83,14 @@ const About = ({ classes }) => {
         className={classes.subSection}
       >
         {DB.communityFocuses.map((community, index) => (
-          <Grid item sm={4} xs={12} className={classes.cardWrapper} key={index}>
+          <Grid
+            item
+            sm={4}
+            xs={12}
+            className={classes.cardWrapper}
+            key={index}
+            onClick={() => handleOpen(community.comId)}
+          >
             <CommunityHistory
               image={community.image}
               title={community.title}
@@ -77,7 +102,29 @@ const About = ({ classes }) => {
         <Grid sm={12} xs={12}>
           <Divider className={classes.divider2} />
         </Grid>
+        {/* --- Modal --- */}
+        <Modal
+          aria-labelledby="transition-modal-title"
+          aria-describedby="transition-modal-description"
+          className={classes.modal}
+          open={open}
+          onClose={handleClose}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+            timeout: 500,
+          }}
+        >
+          <Fade in={open} className={classes.modalWrapper}>
+            <Grid item xs={10} sm={8}>
+              <Grid item sx={12} sm={12}>
+                <CommunityFullDetails item={item} />
+              </Grid>
+            </Grid>
+          </Fade>
+        </Modal>
       </Grid>
+
       {/*--- Contact us form section----*/}
       <ContactUs />
     </Grid>
@@ -199,6 +246,20 @@ const styles = (theme) => ({
   },
   contentWrappper: {
     height: 200,
+  },
+  modal: {
+    display: "flex",
+    paddingTop: 250,
+    justifyContent: "center",
+    backgroundColor: "rgba(255, 157, 0, 0.253)",
+    [theme.breakpoints.down(415)]: {
+      paddingTop: 120,
+    },
+  },
+  modalWrapper: {
+    backgroundColor: theme.palette.color.darkBlue,
+    height: 300,
+    borderRadius: 5
   },
 });
 
