@@ -99,7 +99,7 @@ const Footer = (props) => {
 
               <div
                 className={classes.paraTwo}
-                onClick={() => routeChange("/signup")}
+                onClick={() => routeChange("/become-a-member")}
               >
                 <p className="colorYellow">Become an Member</p>
               </div>
