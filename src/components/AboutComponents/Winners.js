@@ -11,6 +11,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
+import EditIcon from "@material-ui/icons/Edit";
 
 const Winners = (props) => {
   const { classes, winnerImage, speech, header, readMore, link, key } = props;
@@ -27,7 +28,7 @@ const Winners = (props) => {
                   </div>
                 </a>
               </Grid>
-              <Grid item xs={5} sm={5}>
+              <Grid container item xs={5} sm={5}>
                 <CardContent className={classes.contentWrappper}>
                   <Typography variant="h6" className={classes.winnerHeaderText}>
                     {header}
@@ -38,12 +39,22 @@ const Winners = (props) => {
                   </Typography>
                 </CardContent>
 
-                <CardActions>
-                  <Button size="small" className={classes.cardButton}>
-                    <a target="_blank" rel="noreferrer" href={link}>
-                      {readMore}
-                    </a>
-                  </Button>
+                <CardActions style={{ width: "100%" }}>
+                  <Grid item xs={7} sm={7}>
+                    <EditIcon
+                      fontSize="small"
+                      style={{
+                        color: "#2196F3",
+                      }}
+                    />
+                  </Grid>
+                  <Grid item xs={5} sm={5}>
+                    <Button size="small" className={classes.cardButton}>
+                      <a target="_blank" rel="noreferrer" href={link}>
+                        {readMore}
+                      </a>
+                    </Button>
+                  </Grid>
                 </CardActions>
               </Grid>
             </Grid>
@@ -245,10 +256,32 @@ const styles = (theme) => ({
   cardButton: {
     color: theme.palette.color.white,
     fontFamily: theme.palette.font.HelveticaNeue,
-    paddingRight: "2%",
     marginTop: -10,
-    [theme.breakpoints.down(415)]: {
+    [theme.breakpoints.down(1680)]: {
       fontSize: 11,
+      marginTop: 0.5,
+    },
+    [theme.breakpoints.down(1593)]: {
+      marginLeft: -10,
+    },
+    [theme.breakpoints.down(1404)]: {
+      fontSize: 9,
+    },
+    [theme.breakpoints.down(960)]: {
+      fontSize: 12,
+      marginLeft: 0,
+    },
+    [theme.breakpoints.down(847)]: {
+      fontSize: 9,
+    },
+    [theme.breakpoints.down(415)]: {
+      marginLeft: -5,
+    },
+    [theme.breakpoints.down(376)]: {
+      marginLeft: -10,
+    },
+    [theme.breakpoints.down(321)]: {
+      marginLeft: -20,
     },
   },
 
