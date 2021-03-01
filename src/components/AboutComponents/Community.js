@@ -10,16 +10,13 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 
+// Utils Stuff
+import ToolpicButton from "../../utils/ToolpicButton";
+
 // Images
 
 const Community = (props) => {
-   const {
-     classes,
-    image, 
-    title, 
-    briefDescription, 
- 
-   } = props;
+  const { classes, image, title, briefDescription } = props;
   return (
     <Card className={classes.card}>
       <CardActionArea>
@@ -41,13 +38,15 @@ const Community = (props) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" className={classes.cardButton}>
-          Read More
-        </Button>
+        <ToolpicButton tip={`Edit ${title}`} tipClassName={classes.editButton}>
+          <Button size="small" className={classes.cardButton}>
+            Read More
+          </Button>
+        </ToolpicButton>
       </CardActions>
     </Card>
   );
-}
+};
 Community.propTypes = {
   classes: PropTypes.object.isRequired,
 };
