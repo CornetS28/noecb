@@ -8,31 +8,33 @@ import Divider from "@material-ui/core/Divider";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-
+import Typography from "@material-ui/core/Typography";
 
 // Components
 import ContactUs from "../components/ContactUs/ContactUs";
 import CommunityHistory from "../components/AboutComponents/Community";
 import CommunityFullDetails from "../components/AboutComponents/CommunityFullDetails";
+import Winners from "../components/AboutComponents/Winners";
 
 // Images
 import LandingImage from "../images/mainHomeImage.png";
+import CommunityImg from "../images/footballfemme.jpg";
 
 import DB from "../utils/dbSchema";
 
 const About = ({ classes }) => {
-    const [open, setOpen] = React.useState(false);
-    const [item, setItem] = React.useState("");
+  const [open, setOpen] = React.useState(false);
+  const [item, setItem] = React.useState("");
 
-     const handleOpen = (id) => {
-       const communityItem = DB.communityFocuses.find((item) => item.comId === id);
-       setOpen(true);
-       setItem(communityItem);
-     };
+  const handleOpen = (id) => {
+    const communityItem = DB.communityFocuses.find((item) => item.comId === id);
+    setOpen(true);
+    setItem(communityItem);
+  };
 
-      const handleClose = () => {
-        setOpen(false);
-      };
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <Grid container className={classes.aboutPageWrapper}>
@@ -73,7 +75,7 @@ const About = ({ classes }) => {
         <Grid item sm />
       </Grid>
 
-      {/* Community stuff */}
+      {/* --- Community stuff --- */}
       <Grid
         container
         spacing={4}
@@ -99,7 +101,7 @@ const About = ({ classes }) => {
             />
           </Grid>
         ))}
-        <Grid sm={12} xs={12}>
+        <Grid item sm={12} xs={12}>
           <Divider className={classes.divider2} />
         </Grid>
         {/* --- Modal --- */}
@@ -127,6 +129,45 @@ const About = ({ classes }) => {
 
       {/*--- Contact us form section----*/}
       <ContactUs />
+
+      {/*--- Winners us form section----*/}
+      <Grid
+        container
+        spacing={4}
+        item
+        sm={8}
+        xs={11}
+        className={classes.subSection}
+      >
+        <Typography variant="h3" component="h2" className={classes.header3}>
+          Our Winners
+        </Typography>
+
+        <Winners
+          winnerImage={CommunityImg}
+          header="Who donates more"
+          speech="Uasfa sdffsdks ef akdslsfrf rf rjajdksd cscsdsc sck axsxw X jwedewsjd skskjs"
+          readMore="See More"
+        />
+        <Winners
+          winnerImage={CommunityImg}
+          header="Who donates more"
+          speech="Uasfa sdffsdks ef akdslsfrf rf rjajdksd cscsdsc sck axsxw X jwedewsjd skskjs"
+          readMore="See More"
+        />
+        <Winners
+          winnerImage={CommunityImg}
+          header="Who donates more"
+          speech="Uasfa sdffsdks ef akdslsfrf rf rjajdksd cscsdsc sck axsxw X jwedewsjd skskjs"
+          readMore="See More"
+        />
+        <Winners
+          winnerImage={CommunityImg}
+          header="Who donates more"
+          speech="Uasfa sdffsdks ef akdslsfrf rf rjajdksd cscsdsc sck axsxw X jwedewsjd skskjs"
+          readMore="See More"
+        />
+      </Grid>
     </Grid>
   );
 };
@@ -259,7 +300,23 @@ const styles = (theme) => ({
   modalWrapper: {
     backgroundColor: theme.palette.color.darkBlue,
     height: 300,
-    borderRadius: 5
+    borderRadius: 5,
+  },
+
+  // Winners
+  header3: {
+    textTransform: "uppercase",
+    fontWeight: 600,
+    fontFamily: theme.palette.font.bebasNeue,
+    fontStyle: "bold",
+    textAlign: "center",
+    // paddingTop: 50,
+    width: "100%",
+    // backgroundColor: 'red',
+    letterSpacing: theme.palette.font.letterSpacingBig,
+    [theme.breakpoints.down(543)]: {
+      fontSize: 30,
+    },
   },
 });
 
