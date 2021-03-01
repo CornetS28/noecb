@@ -13,9 +13,9 @@ import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 
 const Winners = (props) => {
-  const { classes, winnerImage, speech, header, readMore, link } = props;
+  const { classes, winnerImage, speech, header, readMore, link, key } = props;
   return (
-    <Grid container item xs={12} sm={12} md={6} lg={6}>
+    <Grid container item xs={12} sm={12} md={6} lg={6} key={key}>
       <Grid container item xs={12} sm={11}>
         <Card className={classes.card}>
           <CardActionArea>

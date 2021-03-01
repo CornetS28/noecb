@@ -143,30 +143,17 @@ const About = ({ classes }) => {
           Our Winners
         </Typography>
 
-        <Winners
-          winnerImage={CommunityImg}
-          header="Who donates more"
-          speech="Uasfa sdffsdks ef akdslsfrf rf rjajdksd cscsdsc sck axsxw X jwedewsjd skskjs"
-          readMore="See More"
-        />
-        <Winners
-          winnerImage={CommunityImg}
-          header="Who donates more"
-          speech="Uasfa sdffsdks ef akdslsfrf rf rjajdksd cscsdsc sck axsxw X jwedewsjd skskjs"
-          readMore="See More"
-        />
-        <Winners
-          winnerImage={CommunityImg}
-          header="Who donates more"
-          speech="Uasfa sdffsdks ef akdslsfrf rf rjajdksd cscsdsc sck axsxw X jwedewsjd skskjs"
-          readMore="See More"
-        />
-        <Winners
-          winnerImage={CommunityImg}
-          header="Who donates more"
-          speech="Uasfa sdffsdks ef akdslsfrf rf rjajdksd cscsdsc sck axsxw X jwedewsjd skskjs"
-          readMore="See More"
-        />
+        {DB.winners.slice(0, 4).map((winner, idx) => {
+          return (
+            <Winners
+              key={idx}
+              winnerImage={winner.image}
+              header={winner.title}
+              speech={winner.description}
+              readMore="See More"
+            />
+          );
+        })}
       </Grid>
     </Grid>
   );
@@ -310,9 +297,8 @@ const styles = (theme) => ({
     fontFamily: theme.palette.font.bebasNeue,
     fontStyle: "bold",
     textAlign: "center",
-    // paddingTop: 50,
+    marginBottom: 20,
     width: "100%",
-    // backgroundColor: 'red',
     letterSpacing: theme.palette.font.letterSpacingBig,
     [theme.breakpoints.down(543)]: {
       fontSize: 30,
