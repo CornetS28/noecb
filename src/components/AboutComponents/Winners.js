@@ -13,6 +13,9 @@ import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 import EditIcon from "@material-ui/icons/Edit";
 
+// Utils Stuff
+import ToolpicButton from "../../utils/ToolpicButton";
+
 const Winners = (props) => {
   const { classes, winnerImage, speech, header, readMore, link, key } = props;
   return (
@@ -41,13 +44,26 @@ const Winners = (props) => {
 
                 <CardActions style={{ width: "100%" }}>
                   <Grid item xs={7} sm={7}>
-                    <EditIcon
+                    {/* <EditIcon
                       fontSize="small"
                       style={{
                         color: "#2196F3",
                       }}
-                    />
+                    /> */}
+                    <ToolpicButton
+                      tip="Edit this winner"
+                      // onClick={handleClose}
+                      tipClassName={classes.editButton}
+                    >
+                      <EditIcon
+                        fontSize="small"
+                        style={{
+                          color: "#2196F3",
+                        }}
+                      />
+                    </ToolpicButton>
                   </Grid>
+
                   <Grid item xs={5} sm={5}>
                     <Button size="small" className={classes.cardButton}>
                       <a target="_blank" rel="noreferrer" href={link}>
@@ -213,6 +229,19 @@ const styles = (theme) => ({
     },
     [theme.breakpoints.down(376)]: {
       height: "110px",
+    },
+  },
+  editButton: {
+    bottom: 10,
+    position: "absolute",
+    [theme.breakpoints.down(1285)]: {
+      bottom: 15,
+    },
+    [theme.breakpoints.down(600)]: {
+      bottom: 10,
+    },
+    [theme.breakpoints.down(415)]: {
+      bottom: 13,
     },
   },
   winnerHeaderText: {
