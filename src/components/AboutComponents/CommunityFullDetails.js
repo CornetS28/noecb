@@ -6,13 +6,20 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 
-
 const FullCommunityDetails = ({ classes, item }) => (
   <Grid item sx={12} sm={12}>
-    <Paper variant="outlined" elevation={0} className={classes.userFullDetailsWrapper}>
+    <Paper
+      variant="outlined"
+      elevation={0}
+      className={classes.userFullDetailsWrapper}
+    >
       <Grid className={classes.avatarContainer}>
         <div className={classes.title}>
-          <h3>{item.title}</h3>
+          <h3>
+            <span className={classes.titleDots}>*** </span>
+            {item.title}
+            <span className={classes.titleDots}> ***</span>
+          </h3>
         </div>
         <div className={classes.description}>
           <p>{item.totalDescription}</p>
@@ -49,6 +56,11 @@ const styles = (theme) => ({
     fontSize: 20,
     fotnWeight: "bold",
     textAlign: "center",
+  },
+  titleDots: {
+    color: theme.palette.color.yellow,
+    bottom: -5,
+    position: "relative",
   },
 
   description: {

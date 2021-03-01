@@ -25,7 +25,7 @@ const Footer = (props) => {
   return (
     <>
       <Divider className={classes.divider} />
-      <Grid container spacing={16} className={classes.footerWrapper}>
+      <Grid container className={classes.footerWrapper}>
         <Grid item sm={1} xs={12} />
         <Grid container item sm={10} className={classes.footerContainer}>
           <Grid
