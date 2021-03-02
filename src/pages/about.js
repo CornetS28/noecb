@@ -9,22 +9,49 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import Typography from "@material-ui/core/Typography";
+import Dialog from "@material-ui/core/Dialog";
+import DialogContent from "@material-ui/core/DialogContent";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import AddIcon from "@material-ui/icons/Add";
+import CloseIcon from "@material-ui/icons/Close";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@material-ui/core/styles";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+
 
 // Components
 import ContactUs from "../components/ContactUs/ContactUs";
 import CommunityHistory from "../components/AboutComponents/Community";
 import CommunityFullDetails from "../components/AboutComponents/CommunityFullDetails";
 import Winners from "../components/AboutComponents/Winners";
+import EditWinner from "../components/AboutComponents/EditWinner";
 
 // Images
 import LandingImage from "../images/mainHomeImage.png";
 import CommunityImg from "../images/footballfemme.jpg";
 
+// Utils stuff
+import ToolpicButton from "../utils/ToolpicButton";
 import DB from "../utils/dbSchema";
 
 const About = ({ classes }) => {
   const [open, setOpen] = React.useState(false);
   const [item, setItem] = React.useState("");
+  const [openEditWinner, setOpenEditWinner] = React.useState(false);
+
+
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const handleClickOpen = () => {
+    setOpenEditWinner(true);
+  };
+
+  const handleClickClose = () => {
+    setOpenEditWinner(false);
+  };
 
   const handleOpen = (id) => {
     const communityItem = DB.communityFocuses.find((item) => item.comId === id);
@@ -151,9 +178,35 @@ const About = ({ classes }) => {
               header={winner.title}
               speech={winner.description}
               readMore="See More"
+              editWinner={handleClickOpen}
             />
           );
         })}
+
+        <Dialog
+          open={openEditWinner}
+          onClose={handleClickClose}
+          fullWidth
+          maxWidth="sm"
+        >
+          <ToolpicButton
+            tip="Close"
+            onClick={handleClickClose}
+            tipClassName={classes.closeButton}
+          >
+            <CloseIcon />
+          </ToolpicButton>
+          <DialogTitle className={classes.dialogueEditHeader}>
+            Edit Winner
+          </DialogTitle>
+          <DialogContent>
+            <EditWinner
+              titleWon="Hardest Worker"
+              winnerName="Samson Hill"
+              encouragementWords="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit."
+            />
+          </DialogContent>
+        </Dialog>
       </Grid>
     </Grid>
   );
@@ -279,7 +332,7 @@ const styles = (theme) => ({
     display: "flex",
     paddingTop: 250,
     justifyContent: "center",
-    backgroundColor: "rgba(255, 157, 0, 0.253)",
+    backgroundColor: "rgba(192, 191, 189, 0.103)",
     [theme.breakpoints.down(415)]: {
       paddingTop: 120,
     },
@@ -303,6 +356,27 @@ const styles = (theme) => ({
     [theme.breakpoints.down(543)]: {
       fontSize: 30,
     },
+  },
+  closeButton: {
+    position: "absolute",
+    left: "90%",
+    top: "6%",
+    color: "red",
+    cursor: "pointer",
+    [theme.breakpoints.down(600)]: {
+      left: "89%",
+    },
+    [theme.breakpoints.down(512)]: {
+      left: "87.5%",
+    },
+    [theme.breakpoints.down(512)]: {
+      left: "86%",
+      top: "4%",
+    },
+  },
+  dialogueEditHeader: {
+    marginLeft: 10,
+    color: theme.palette.color.darkBlue,
   },
 });
 
