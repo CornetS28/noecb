@@ -17,7 +17,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import ToolpicButton from "../../utils/ToolpicButton";
 
 const Winners = (props) => {
-  const { classes, winnerImage, speech, header, readMore, link, key } = props;
+  const { classes, winnerImage, speech, header, readMore, link, editWinner, key } = props;
   return (
     <Grid container item xs={12} sm={12} md={6} lg={6} key={key}>
       <Grid container item xs={12} sm={11}>
@@ -52,7 +52,7 @@ const Winners = (props) => {
                     /> */}
                     <ToolpicButton
                       tip="Edit this winner"
-                      // onClick={handleClose}
+                      onClick={editWinner}
                       tipClassName={classes.editButton}
                     >
                       <EditIcon
