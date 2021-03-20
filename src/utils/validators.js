@@ -45,3 +45,24 @@ export const signinSchema = yup.object().shape({
     .min(6, "Password must contain at least 6 characters")
     .required("Password is required"),
 });
+
+export const memeGeneratorSchema = yup.object().shape({
+  phrase_1: yup.string().required("Tell us who you are"),
+  phrase_2: yup
+    .string()
+    .max(50, "Field must contain in max 50 characters")
+    .required("Tell us your reason"),
+  file_name: yup
+    .mixed()
+    .required("You need to provide a file")
+    .test("fileSize", "The file is too large", (value) => {
+      return value && value[0].size <= 30000000;
+    })
+    .test("type", "We only support png and jpeg at the moment", (value) => {
+      return (
+        (value && value[0].type === "image/png") ||
+        (value && value[0].type === "image/jpg") ||
+        value[0].type === "image/jpeg"
+      );
+    }),
+});

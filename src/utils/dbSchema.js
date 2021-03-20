@@ -3,7 +3,6 @@ import LandingImage from "../images/mainHomeImage.png";
 import profileImg from "../images/profile.png";
 import CommunityImg from "../images/footballfemme.jpg";
 
-
 const db = {
   users: [
     {
@@ -249,6 +248,28 @@ const db = {
       title: "Who donates more",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit. ",
+    },
+  ],
+  memes: [
+    {
+      memeId: "dh23ggj5h3434656565gf43",
+      file_name: "ector1",
+      memeImage: profileImg,
+    },
+    {
+      memeId: "dh23ggj5h3434656565gf43",
+      file_name: "ector2",
+      memeImage: profileImg,
+    },
+    {
+      memeId: "dh23ggj5h3434656565gf43",
+      file_name: "ector3",
+      memeImage: profileImg,
+    },
+    {
+      memeId: "dh23ggj5h3434656565gf43",
+      file_name: "ector4",
+      memeImage: profileImg,
     },
   ],
 };
