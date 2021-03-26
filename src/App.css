@@ -28,6 +28,7 @@ a {
   padding: 5.5px 9px 7px 9px;
 }
 
+
 .sub-nav-button .navbar__link {
   font-size: 13px;
   font-weight: bold;
@@ -57,7 +58,7 @@ a {
 }
 .sub-nav-button .navbar__link--active {
   border: 1px solid #043185;
-  background-color: #2565b3;
+  background-color: #043185;
   width: 100%;
   color: #f7f7ef !important;
   transition: border-bottom 0.5s ease-in-out;
@@ -133,6 +134,12 @@ a {
 }
 
 /* Small screen navbar */
+
+@media only screen and (max-width: 1409px) {
+  .navbar__link {
+    font-size: 24px;
+  }
+}
 @media only screen and (max-width: 1304px) {
   .navbar__link {
     font-size: 20px;
@@ -143,7 +150,7 @@ a {
     font-size: 18px;
   }
 }
-@media only screen and (max-width: 1109px) {
+@media only screen and (max-width: 1121px) {
   .navbar__link {
     font-size: 16px;
   }
@@ -153,9 +160,15 @@ a {
     font-size: 15px;
   }
 }
-@media only screen and (max-width: 1012px) {
+@media only screen and (max-width: 1015px) {
   .navbar__link {
     font-size: 13px;
     padding: "0px 9px 0px 9px";
   }
+}
+@media only screen and (max-width: 860px) {
+  .navbar__link {
+    width: 100%;
+  }
+ 
 }

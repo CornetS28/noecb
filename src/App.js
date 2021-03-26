@@ -15,14 +15,14 @@ import Signup from "./Auth/Signup";
 import Login from "./Auth/Login";
 
 // Components
-import Navbar from "./components/Layout/Navbar";
-import Footer from "./components/Layout/Footer";
+import Navbar from "./components/Layout/Navbar/Navbar";
+import Footer from "./components/Layout/Footer/Footer";
 
 // Pages
 import home from "./pages/landingPage";
 import about from "./pages/about";
 import memeGenerator from "./pages/memeGenerator";
-import resources from "./pages/resources";
+import archives from "./pages/archives";
 import chat from "./pages/chat";
 import PageNotFound from "./pages/pageNotFound";
 import privacyPolicy from "./pages/privacyPolicy";
@@ -45,7 +45,7 @@ const App = () => {
             <Route exact path="/social" component={memeGenerator} />
             <Route exact path="/about" component={about} />
             <Route exact path="/chat" component={chat} />
-            <Route exact path="/resources" component={resources} />
+            <Route exact path="/archives" component={archives} />
             <Route exact path="/privacypolicy" component={privacyPolicy} />
             <Route component={PageNotFound} />
           </Switch>

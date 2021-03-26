@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 
 // Images
-import logo from "../../images/logo.png";
-import helpingHand from "../../images/helping-hand1.svg";
-import together from "../../images/together.svg";
-import bible from "../../images/bible.svg";
+import logo from "../../../images/logo.png";
+import helpingHand from "../../../images/helping-hand1.svg";
+import together from "../../../images/together.svg";
+import bible from "../../../images/bible.svg";
 
 // MUI stuff
 import withStyles from "@material-ui/core/styles/withStyles";
