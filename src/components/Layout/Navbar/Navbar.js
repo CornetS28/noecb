@@ -211,7 +211,7 @@ const Navbar = (props) => {
                     <NavLink
                       activeClassName="navbar__link--active"
                       className="navbar__link colorYellow"
-                      to="/chat"
+                      to="/interactions"
                     >
                       Interactions
                     </NavLink>
@@ -278,9 +278,9 @@ const Navbar = (props) => {
                     <NavLink
                       activeClassName="navbar__link--active"
                       className="navbar__link colorYellow"
-                      to="/contestd2"
+                      to="/articles"
                     >
-                      balala
+                      Articles
                     </NavLink>
                   </div>
                   <Grid className="care-an-support-desc1">
@@ -307,18 +307,18 @@ const Navbar = (props) => {
                     <NavLink
                       activeClassName="navbar__link--active"
                       className="navbar__link colorYellow"
-                      to="/contestdw"
+                      to="/members"
                     >
-                      sdjksdjks
+                      Members
                     </NavLink>
                   </div>
                   <div className="sub-nav-button">
                     <NavLink
                       activeClassName="navbar__link--active"
                       className="navbar__link colorYellow"
-                      to="/contestde"
+                      to="/privacypolicy"
                     >
-                      sdjksdjks
+                      Privacy & Policy
                     </NavLink>
                   </div>
                 </div>

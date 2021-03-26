@@ -7,10 +7,13 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Divider from "@material-ui/core/Divider";
 
 // Components
-import MemeGenerator from "../components/Socials/MemeGenerator";
+import MemeGenerator from "../../components/Socials/MemeGenerator";
+
+// Styles
+import styles from "./Styles"
 
 // Images
-import LandingImage from "../images/mainHomeImage.png";
+import LandingImage from "../../images/mainHomeImage.png";
 
 
 const Social = (props) => {
@@ -32,22 +35,5 @@ const Social = (props) => {
     </Grid>
   );
 }
-const styles = (theme) => ({
-  memeGeneratorPageWrapper: {
-    backgroundColor: theme.palette.primary.main,
-  },
-  imgContainer: {
-    width: "100%",
-    position: "relative",
-  },
-  mainImage: {
-    margin: "auto",
-    width: "100%",
-    position: "aboslute",
-    objectFit: "contain",
-    backgroundSize: "contain",
-    filter: "brightness(0.5)",
-  },
-});
 
 export default withStyles(styles)(Social);
