@@ -320,7 +320,7 @@ const styles = (theme) => ({
   },
 
   memesWrapper: {
-    // backgroundColor: theme.palette.color.darkBlue,
+  margin: 'auto',
     marginTop: 60,
     ["@media (max-width: 599px)"]: {
       margin: "auto",
@@ -329,8 +329,8 @@ const styles = (theme) => ({
 
   memeImage: {
     position: "relative",
-    width: "100%",
-    height: "360px",
+    width: "80%",
+    height: "260px",
     backgroundColor: theme.palette.color.main,
     objectFit: "contain",
     margin: "auto",

@@ -2,6 +2,7 @@
 import LandingImage from "../images/mainHomeImage.png";
 import profileImg from "../images/profile.png";
 import CommunityImg from "../images/footballfemme.jpg";
+import SammImg from "../images/Sammm.jpeg";
 
 const db = {
   users: [
@@ -254,22 +255,22 @@ const db = {
     {
       memeId: "dh23ggj5h3434656565gf43",
       file_name: "ector1",
-      memeImage: profileImg,
+      memeImage: SammImg,
     },
     {
       memeId: "dh23ggj5h3434656565gf43",
       file_name: "ector2",
-      memeImage: profileImg,
+      memeImage: SammImg,
     },
     {
       memeId: "dh23ggj5h3434656565gf43",
       file_name: "ector3",
-      memeImage: profileImg,
+      memeImage: SammImg,
     },
     {
       memeId: "dh23ggj5h3434656565gf43",
       file_name: "ector4",
-      memeImage: profileImg,
+      memeImage: SammImg,
     },
   ],
 };

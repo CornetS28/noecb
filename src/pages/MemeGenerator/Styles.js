@@ -1,6 +1,6 @@
 const styles = (theme) => ({
   memeGeneratorPageWrapper: {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.color.darkWhite,
   },
   imgContainer: {
     width: "100%",
