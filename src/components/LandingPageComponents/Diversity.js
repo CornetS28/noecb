@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 // MUI Stuff
 import Grid from "@material-ui/core/Grid";
@@ -89,5 +90,9 @@ const styles = (theme) => ({
     },
   },
 });
+
+Diversity.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(Diversity);

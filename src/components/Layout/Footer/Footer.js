@@ -1,12 +1,13 @@
+/* eslint-disable-line no-useless-computed-key */
 import React from "react";
 import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 
 // Images
-import logo from "../../images/logo.png";
-import helpingHand from "../../images/helping-hand1.svg";
-import together from "../../images/together.svg";
-import bible from "../../images/bible.svg";
+import logo from "../../../images/logo.png";
+import helpingHand from "../../../images/helping-hand1.svg";
+import together from "../../../images/together.svg";
+import bible from "../../../images/bible.svg";
 
 // MUI stuff
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -15,7 +16,7 @@ import Divider from "@material-ui/core/Divider";
 
 const Footer = (props) => {
   const history = useHistory();
-
+  // const currentUser = useSelector((state) => state.auth.currentUser);
   const routeChange = (path) => {
     history.push(path);
   };
@@ -24,10 +25,7 @@ const Footer = (props) => {
   return (
     <>
       <Divider className={classes.divider} />
-      <Grid container spacing={10} className={classes.footerWrapper}>
-        <Grid item sm={12} xs={12}>
-          <Divider className={classes.divider} style={{ marginTop: -4.5 }} />
-        </Grid>
+      <Grid container className={classes.footerWrapper}>
         <Grid item sm={1} xs={12} />
         <Grid container item sm={10} className={classes.footerContainer}>
           <Grid
@@ -41,12 +39,12 @@ const Footer = (props) => {
               <div className={classes.footerPara}>
                 <p>
                   Sed ut perspiciatis, unde omnis iste natus error sit
-                  voluptatem accusantium doloremque laudantium, totam rem
-                  aperiam eaque ipsa, quae ab illo inventore veritatis et quasi.
+                  voluptatem accusantium doloremque laudantium, quae ab illo
+                  inventore veritatis et quasi.
                 </p>
               </div>
               <div edge="start" className={classes.logoWrapper}>
-                <Grid item xs={12} sm={10} className={classes.logoGroup}>
+                <Grid item xs={12} sm={7} className={classes.logoGroup}>
                   <img
                     src={helpingHand}
                     alt="footerLogo"
@@ -101,7 +99,7 @@ const Footer = (props) => {
 
               <div
                 className={classes.paraTwo}
-                onClick={() => routeChange("/signup")}
+                onClick={() => routeChange("/become-a-member")}
               >
                 <p className="colorYellow">Become an Member</p>
               </div>
@@ -189,27 +187,37 @@ const styles = (theme) => ({
   ...theme.palette.primary,
   ...theme.palette.main,
   footerLink: {
-    color: theme.palette.color.white,
-    fontFamily: theme.palette.font.HelveticaNeue,
+    color: theme.palette.color.gray,
+    fontFamily: theme.palette.font.fontFamily,
     fontSize: 15,
-    "&:hover": {
-      color: theme.palette.color.darkBlue,
-    },
   },
   footerPara: {
     fontSize: 22,
     paddingLeft: 20,
     paddingRight: 20,
     width: "90%",
-    color: theme.palette.secondary.main,
+    color: theme.palette.color.white,
     fontFamily: theme.palette.font.fontFamily,
-    ["@media (max-width: 1155px)"]: {
+    [theme.breakpoints.down(1155)]: {
       fontSize: 18,
     },
   },
   divider: {
-    backgroundColor: theme.palette.color.darkWhite,
+    backgroundColor: theme.palette.secondary.main,
   },
+  logoGroup: {
+    marginLeft: 15,
+    display: "flex",
+    justifyContent: "space-between",
+    [theme.breakpoints.down(600)]: {
+      marginRight: 15,
+    },
+  },
+  footerLogo: {
+    paddingLeft: 10,
+    width: "20%",
+  },
+
   gridWrapperTwo: {
     color: theme.palette.secondary.main,
     textAlign: "right",
@@ -227,32 +235,15 @@ const styles = (theme) => ({
   },
 
   footerContainer: {
-    marginTop: -80,
-    marginBottom: -60,
-    [theme.breakpoints.down(1131)]: {
-      marginBottom: -60,
-    },
-    [theme.breakpoints.down(880)]: {
-      marginBottom: -140,
-    },
-    [theme.breakpoints.down(600)]: {
-      marginTop: -120,
-      marginBottom: -140,
-    },
+    marginTop: 20,
   },
   footerWrapperLeft: {
     color: theme.palette.secondary.main,
     backgroundColor: theme.palette.primary.main,
     fontFamily: theme.palette.font.fontFamily,
-    [theme.breakpoints.down(600)]: {
-      marginTop: -40,
-    },
   },
   footerWrapperRight: {
     color: theme.palette.secondary.main,
-    [theme.breakpoints.down(600)]: {
-      marginBottom: -20,
-    },
   },
   firstParaRight: {
     backgroundColor: theme.palette.primary.main,
@@ -277,11 +268,11 @@ const styles = (theme) => ({
     width: "70%",
     paddingRight: 20,
     float: "right",
-    ["@media (max-width: 675px)"]: {
+    [theme.breakpoints.down(675)]: {
       width: 200,
     },
 
-    ["@media (max-width: 599px)"]: {
+    [theme.breakpoints.down(600)]: {
       fontSize: 14,
       width: "95%",
       textAlign: "center",
@@ -297,7 +288,7 @@ const styles = (theme) => ({
     "&:hover": {
       backgroundColor: theme.palette.color.red,
     },
-    ["@media (max-width: 1271px)"]: {
+    [theme.breakpoints.down(1271)]: {
       fontSize: 14,
       width: "100%",
       paddingRight: 5,
@@ -308,13 +299,11 @@ const styles = (theme) => ({
       textAlign: "center",
     },
   },
-
   logoWebWrapper: {
     [theme.breakpoints.down(600)]: {
       textAlign: "center",
     },
   },
-
   logo: {
     width: "170px",
     height: "140px",
@@ -330,27 +319,13 @@ const styles = (theme) => ({
       height: "140px",
     },
   },
-  logoGroup: {
-    marginLeft: 15,
-    display: "flex",
-    justifyContent: "space-between",
-    [theme.breakpoints.down(600)]: {
-      marginRight: 15,
-    },
-  },
-  footerLogo: {
-    paddingLeft: 10,
-    width: "60px",
-    [theme.breakpoints.down(415)]: {
-      width: "40px",
-    },
-  },
+
   footerBottomLeft1: {
     fontFamily: theme.palette.font.HelveticaNeue,
     fontSize: 15,
     height: 20,
     color: theme.palette.color.white,
-    ["@media (max-width: 1541px)"]: {
+    [theme.breakpoints.down(1541)]: {
       fontSize: 14,
     },
     [theme.breakpoints.down(600)]: {
@@ -362,7 +337,7 @@ const styles = (theme) => ({
     height: 20,
     backgroundColor: theme.palette.primary.main,
     fontFamily: theme.palette.font.fontFamily,
-    ["@media (max-width: 1541px)"]: {
+    [theme.breakpoints.down(1541)]: {
       fontSize: 14,
     },
     [theme.breakpoints.down(600)]: {
@@ -374,11 +349,19 @@ const styles = (theme) => ({
     height: 20,
     backgroundColor: theme.palette.primary.main,
     fontFamily: theme.palette.font.fontFamily,
-    ["@media (max-width: 1541px)"]: {
+    [theme.breakpoints.down(1541)]: {
       fontSize: 14,
     },
     [theme.breakpoints.down(600)]: {
       textAlign: "center",
+    },
+  },
+  footerLink: {
+    color: theme.palette.color.white,
+    fontFamily: theme.palette.font.HelveticaNeue,
+    fontSize: 15,
+    "&:hover": {
+      color: theme.palette.color.darkBlue,
     },
   },
   footerContainer2: {
@@ -399,11 +382,11 @@ const styles = (theme) => ({
     fontFamily: theme.palette.font.fontFamily,
     fontSize: 15,
     height: 20,
-    ["@media (max-width: 1079px)"]: {
+    [theme.breakpoints.down(1079)]: {
       fontSize: 14,
       width: "130%",
     },
-    ["@media (max-width: 1541px)"]: {
+    [theme.breakpoints.down(1541)]: {
       fontSize: 14,
       width: "100%",
       marginBottom: 20,
@@ -425,16 +408,16 @@ const styles = (theme) => ({
     "&:hover": {
       color: theme.palette.color.yellow,
     },
-    ["@media (max-width: 660px)"]: {
+    [theme.breakpoints.down(660)]: {
       marginRight: 5,
     },
-    ["@media (max-width: 600px)"]: {
+    [theme.breakpoints.down(600)]: {
       fontSize: 14,
       width: "95%",
       textAlign: "center",
       marginBottom: 20,
     },
-    ["@media (max-width: 5375px)"]: {
+    [theme.breakpoints.down(376)]: {
       width: "95%",
     },
   },

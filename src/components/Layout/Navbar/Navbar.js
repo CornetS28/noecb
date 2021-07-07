@@ -1,25 +1,27 @@
 import React, { useState } from "react";
 import Link from "react-router-dom/Link";
 import PropTypes from "prop-types";
-import logo from "../../images/logo.png";
-import profile from "../../images/profile.png";
-
 import { NavLink } from "react-router-dom";
+
+// Images
+import logo from "../../../images/logo.png";
+import profile from "../../../images/profile.png";
+
+// Styles
+import styles from "./Styles";
 
 // MUI
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
-import SearchIcon from "@material-ui/icons/Search";
 import Avatar from "@material-ui/core/Avatar";
 import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
-import { fade, withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import MoreIcon from "@material-ui/icons/MoreVert";
+import MenuIcon from "@material-ui/icons/Menu";
 
 const Navbar = (props) => {
   const [state, setState] = useState({
@@ -56,16 +58,26 @@ const Navbar = (props) => {
       transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
+      style={{ color: "#000000" }}
     >
+      <MenuItem className={classes.mobileMenueColor}>
+        <Grid className={classes.avatarContainerMobile}>
+          <Avatar className={classes.userImages}>
+            <div edge="start" className={classes.logoWrapper}>
+              <img src={profile} alt="logo" className={classes.photo} />
+            </div>
+          </Avatar>
+        </Grid>
+      </MenuItem>
       <MenuItem className={classes.mobileMenueColor}>
         <Button
           color="inherit"
           component={Link}
-          to="/resources"
+          to="/archives"
           activeClassName="navbar__link--active"
           className="navbar__link"
         >
-          Resources
+          Archives
         </Button>
       </MenuItem>
       <MenuItem className={classes.mobileMenueColor}>
@@ -145,11 +157,8 @@ const Navbar = (props) => {
                 <img src={logo} alt="logo" className={classes.logo} />
               </div>
             </IconButton>
-            <Typography variant="h6" className={classes.emptySpot}></Typography>
-
-            <div className={classes.navigationWrapper} />
-            <div>
-              <Grid className={classes.mainNav}>
+            <div style={{ display: "column", flexGrow: 1 }}>
+              <Grid container item sm={12} style={{ display: "flex" }}>
                 <div
                   className={classes.sectionDesktop}
                   value={alignment}
@@ -161,10 +170,10 @@ const Navbar = (props) => {
                     <NavLink
                       activeClassName="navbar__link--active"
                       className="navbar__link colorYellow"
-                      to="/resources"
+                      to="/archives"
                       value="left"
                     >
-                      Resources
+                      Archives
                     </NavLink>
                   </div>
                   <div className="button">
@@ -202,42 +211,25 @@ const Navbar = (props) => {
                     <NavLink
                       activeClassName="navbar__link--active"
                       className="navbar__link colorYellow"
-                      to="/chat"
+                      to="/interactions"
                     >
                       Interactions
                     </NavLink>
                   </div>
-
-                  {/* <div className="button">
-                  <NavLink
-                    activeClassName="navbar__link--active"
-                    className="navbar__link colorYellow"
-                    to="/login"
-                  >
-                    Sign In
-                  </NavLink>
-                </div> */}
-
-                  <Grid className={classes.avatarContainer}>
-                    <Avatar className={classes.userInitial}>
-                      <div edge="start" className={classes.logoWrapper}>
-                        <img
-                          src={profile}
-                          alt="logo"
-                          className={classes.photo}
-                        />
-                      </div>
-                    </Avatar>
-                  </Grid>
-
-                  {/* <IconButton aria-label="search" color="inherit">
-                <SearchIcon />
-              </IconButton> */}
                 </div>
+
+                <Grid className={classes.avatarContainer}>
+                  <Avatar className={classes.userImages}>
+                    <div edge="start" className={classes.logoWrapper}>
+                      <img src={profile} alt="logo" className={classes.photo} />
+                    </div>
+                  </Avatar>
+                </Grid>
               </Grid>
+
               <Grid className={classes.subNav}>
                 <div
-                  className={classes.sectionDesktop}
+                  className={classes.sectionDesktopSubNav}
                   value={alignment}
                   exclusive
                   onChange={handleAlignment}
@@ -286,9 +278,9 @@ const Navbar = (props) => {
                     <NavLink
                       activeClassName="navbar__link--active"
                       className="navbar__link colorYellow"
-                      to="/contestd2"
+                      to="/articles"
                     >
-                      balala
+                      Articles
                     </NavLink>
                   </div>
                   <Grid className="care-an-support-desc1">
@@ -315,23 +307,25 @@ const Navbar = (props) => {
                     <NavLink
                       activeClassName="navbar__link--active"
                       className="navbar__link colorYellow"
-                      to="/contestdw"
+                      to="/members"
                     >
-                      sdjksdjks
+                      Members
                     </NavLink>
                   </div>
                   <div className="sub-nav-button">
                     <NavLink
                       activeClassName="navbar__link--active"
                       className="navbar__link colorYellow"
-                      to="/contestde"
+                      to="/privacypolicy"
                     >
-                      sdjksdjks
+                      Privacy & Policy
                     </NavLink>
                   </div>
                 </div>
               </Grid>
             </div>
+
+            <div className={classes.emptyHorizontalSpace} />
             <div className={classes.sectionMobile}>
               <IconButton
                 aria-label="show more"
@@ -340,14 +334,13 @@ const Navbar = (props) => {
                 onClick={handleMobileMenuOpen}
                 color="inherit"
               >
-                <MoreIcon />
+                <MenuIcon />
               </IconButton>
             </div>
           </Toolbar>
         </AppBar>
         {renderMobileMenu}
       </div>
-
       <Grid item sm={12} xs={12}>
         <Divider className={classes.divider} />
       </Grid>
@@ -355,77 +348,8 @@ const Navbar = (props) => {
   );
 };
 
-const styles = (theme) => ({
-  search: {
-    position: "relative",
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(3),
-      width: "auto",
-    },
-  },
-  sectionDesktop: {
-    display: "none",
-    [theme.breakpoints.up("md")]: {
-      display: "flex",
-    },
-  },
-  sectionMobile: {
-    display: "flex",
-    [theme.breakpoints.up("md")]: {
-      display: "none",
-    },
-  },
-
-  navigationWrapper: {
-    flexGrow: 1,
-  },
-  emptySpot: {
-    flexGrow: 1,
-  },
-  navbarContainer: {
-    marginLeft: 40,
-    marginRight: 40,
-  },
-  logo: {
-    width: "125px",
-    height: "100px",
-    marginTop: -13,
-    marginBottom: -25,
-  },
-  mobileMenueColor: {
-    backgroundColor: theme.palette.color.lemonGreen,
-  },
-  subNav: {
-    marginLeft: 5,
-    marginTop: 0,
-  },
-
-  userInitial: {
-    background: "#00C8",
-    width: "50px",
-    height: "50px",
-    marginTop: "10px",
-  },
-  photo: {
-    width: "100%",
-    height: "50px",
-  },
-});
-
 Navbar.protoTypes = {
   classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Navbar);
-
-
-
